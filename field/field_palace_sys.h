@@ -16,4 +16,4 @@ struct FieldPalaceSys
 };
 
 #endif //__FIELD_PALACE_SYS_H
-//2022-09-28 13:26 / Tchaikovsky code generator
+//2022-11-02 23:13 / Tchaikovsky code generator

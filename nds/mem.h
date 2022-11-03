@@ -22,4 +22,4 @@ extern const void* sys_memcpy_ex(const void* src, void* dst, s32 size);
 C_DECL_END
 
 #endif //__MEM_H
-//2022-09-28 13:26 / Tchaikovsky code generator
+//2022-11-02 23:13 / Tchaikovsky code generator

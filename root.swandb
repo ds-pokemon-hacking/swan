@@ -1543,7 +1543,7 @@ SourceFiles:
       - Definition:
           Content: "struct GFLHeapManager\n{\n  HeapHandle *HeapHandles;\n  u8 *HeapHandleIndices;\n  u16 SubHeapCount;\n  u16 MainHeapCount;\n  u16 MaxConcurrentSubHandles;\n  u16 ResultCode;\n};"
         Methods:
-    Macros: "#include <string.h>\n\n#define GFL_HEAP__FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)\n\n#define GFL_NEW(heapId, type) (type*) GFL_HeapAllocate((heapId), sizeof(type), 0, GFL_HEAP__FILENAME__, __LINE__)\n#define GFL_NEW_ARRAY(heapId, type, count) (type*) GFL_HeapAllocate((heapId), sizeof(type) * count, 0, GFL_HEAP__FILENAME__, __LINE__)\n\n#define GFL_MALLOC(heapId, size) GFL_HeapAllocate((heapId), (size), 0, GFL_HEAP__FILENAME__, __LINE__)\n#define GFL_CALLOC(heapId, size) GFL_HeapAllocate((heapId), (size), 1, GFL_HEAP__FILENAME__, __LINE__)\n#define GFL_FREE(ptr) GFL_HeapFree((ptr))"
+    Macros: "#include <string.h>\n\n#define GFL_HEAP__FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)\n\n#define GFL_NEW(heapId, type) (type*) GFL_HeapAllocate((heapId), sizeof(type), 0, GFL_HEAP__FILENAME__, __LINE__)\n#define GFL_NEW_ARRAY(heapId, type, count) (type*) GFL_HeapAllocate((heapId), sizeof(type) * (count), 0, GFL_HEAP__FILENAME__, __LINE__)\n\n#define GFL_MALLOC(heapId, size) GFL_HeapAllocate((heapId), (size), 0, GFL_HEAP__FILENAME__, __LINE__)\n#define GFL_CALLOC(heapId, size) GFL_HeapAllocate((heapId), (size), 1, GFL_HEAP__FILENAME__, __LINE__)\n#define GFL_FREE(ptr) GFL_HeapFree((ptr))"
   - Path: gfl/core/gfl_overlay.h
     Includes:
       - gfl/core/gfl_heap.h
@@ -2364,12 +2364,14 @@ SourceFiles:
             IsStatic: false
   - Path: gfl/g2d/gfl_bitmap.h
     Includes:
+      - ns/g2d/res/ResCharacter.h
+      - gfl/core/gfl_heap.h
     Typedefs:
     GVars:
     Functions:
       - Content: GFLBitmap *__fastcall GFL_BitmapCreate(u32 tileWidth, u32 tileHeight, u32 bytesPerTile, HeapID heapId)
-      - Content: GFLBitmap *__fastcall GFL_BitmapWrap(u8 *pixelData, u16 tileWidth, u16 tileHeight, u32 bytesPerTile, HeapID heapId)
-      - Content: GFLBitmap *__fastcall GFL_BitmapWrapVRAM(u8 *pixelData, u16 tileWidth, u16 tileHeight, u32 bytesPerTile, HeapID heapId)
+      - Content: GFLBitmap *__fastcall GFL_BitmapWrap(void *pixelData, u16 tileWidth, u16 tileHeight, u32 bytesPerTile, HeapID heapId)
+      - Content: GFLBitmap *__fastcall GFL_BitmapWrapVRAM(void *pixelData, u16 tileWidth, u16 tileHeight, u32 bytesPerTile, HeapID heapId)
       - Content: void __fastcall GFL_BitmapFree(GFLBitmap *bmp)
       - Content: u8 *__fastcall GFL_BitmapGetPixelData(GFLBitmap *bmp)
       - Content: u32 __fastcall GFL_BitmapGetWidth(GFLBitmap *bmp)
@@ -3007,6 +3009,24 @@ SourceFiles:
       - Definition:
           Content: "struct PlayerVolumeFader\n{\n  u8 PlayerIndex;\n  u8 SrcVolume;\n  u8 DstVolume;\n  u8 _padDstVolume;\n  u16 EndFrame;\n  u16 NowFrame;\n  u8 Mute;\n  u8 _padMute;\n};\n"
         Methods:
+  - Path: gfl/str/gfl_textprint.h
+    Includes:
+      - gfl/g2d/gfl_bitmap.h
+    Typedefs:
+    GVars:
+      - Content: TextPrintState g_DebugPrintState;
+    Functions:
+      - Content: void __fastcall GFL_TextPrintInit(const char *fontPath)
+      - Content: void __fastcall GFL_TextPrintDrawIndices(u16 *printstr, TextPrintState *state)
+      - Content: void __fastcall GFL_TextPrintDrawString(const char *string, TextPrintState *state)
+      - Content: void __fastcall GFL_TextPrintStringToIndices(const char *cstr, u16 *printstr, u32 destCapacity)
+      - Content: u32 __fastcall GFL_TextPrintASCIIToIndex(u32 character)
+      - Content: int __fastcall GFL_TextPrintSJISToIndex(u32 character)
+    Enums:
+    Structures:
+      - Definition:
+          Content: "struct TextPrintState\n{\n  GFLBitmap *m_Bitmap;\n  u16 OutOffsX;\n  u16 OutOffsY;\n  u8 LetterSpacing;\n  u8 LineSpacing;\n  u8 ColorIndices;\n  u8 _Padding;\n};\n"
+        Methods:
   - Path: math/angle.h
     Includes:
       - math/fixed.h
@@ -3505,6 +3525,14 @@ SourceFiles:
     GVars:
       - Content: LCDIO LCDIO_A;
       - Content: LCDIO LCDIO_B;
+      - Content: s16 MASTER_BRIGHT_A;
+      - Content: s16 MASTER_BRIGHT_B;
+      - Content: volatile int DISPCNT_A;
+      - Content: volatile int DISPCNT_B;
+      - Content: StdPalette STD_PALETTE_BG_A;
+      - Content: StdPalette STD_PALETTE_BG_B;
+      - Content: StdPalette STD_PALETTE_OBJ_A;
+      - Content: StdPalette STD_PALETTE_OBJ_B;
     Functions:
       - Content: void __fastcall gfxInit()
       - Content: b32 __fastcall gfxUploadAsync(GfxUploadTarget target, u32 dstOffset, void *src, size_t size)
@@ -3710,6 +3738,9 @@ SourceFiles:
         Methods:
       - Definition:
           Content: "struct LCDIO\n{\n  u16 BG0CNT;\n  u16 BG1CNT;\n  u16 BG2CNT;\n  u16 BG3CNT;\n  u16 BG0HOFS;\n  u16 BG0VOFS;\n  u16 BG1HOFS;\n  u16 BG1VOFS;\n  u16 BG2HOFS;\n  u16 BG2VOFS;\n  u16 BG3HOFS;\n  u16 BG3VOFS;\n  G2DBGTransformRegs BG2Transform;\n  G2DBGTransformRegs BG3Transform;\n  u16 WIN0H;\n  u16 WIN1H;\n  u16 WIN0V;\n  u16 WIN1V;\n  u16 WININ;\n  u16 WINOUT;\n  u32 MOSAIC;\n  G2DBlendRegs BLD;\n};\n"
+        Methods:
+      - Definition:
+          Content: "struct StdPalette\n{\n  GXColor Colors[256];\n};\n"
         Methods:
   - Path: nds/hid.h
     Includes:

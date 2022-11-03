@@ -7,6 +7,7 @@
 STRUCT_DECLARE(G2DBGTransformRegs)
 STRUCT_DECLARE(G2DBlendRegs)
 STRUCT_DECLARE(LCDIO)
+STRUCT_DECLARE(StdPalette)
 
 ENUM_DECLARE(GXLightID)
 ENUM_DECLARE(GEPixelFormat)
@@ -442,9 +443,30 @@ struct LCDIO
     G2DBlendRegs BLD;
 };
 
+struct StdPalette
+{
+    GXColor Colors[256];
+};
+
 extern LCDIO LCDIO_A;
 
 extern LCDIO LCDIO_B;
 
+extern s16 MASTER_BRIGHT_A;
+
+extern s16 MASTER_BRIGHT_B;
+
+extern volatile int DISPCNT_A;
+
+extern volatile int DISPCNT_B;
+
+extern StdPalette STD_PALETTE_BG_A;
+
+extern StdPalette STD_PALETTE_BG_B;
+
+extern StdPalette STD_PALETTE_OBJ_A;
+
+extern StdPalette STD_PALETTE_OBJ_B;
+
 #endif //__GX_H
-//2022-09-28 13:26 / Tchaikovsky code generator
+//2022-11-02 23:13 / Tchaikovsky code generator

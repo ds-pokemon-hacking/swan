@@ -47,4 +47,4 @@ struct G3DManager
 };
 
 #endif //__GFL_G3D_SCENEMGR_H
-//2022-09-28 13:26 / Tchaikovsky code generator
+//2022-11-02 23:13 / Tchaikovsky code generator

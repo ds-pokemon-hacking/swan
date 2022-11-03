@@ -30,4 +30,4 @@ struct MapTerrainSamplerOutput
 };
 
 #endif //__FIELD_MAP_TERRAIN_H
-//2022-09-28 13:26 / Tchaikovsky code generator
+//2022-11-02 23:13 / Tchaikovsky code generator

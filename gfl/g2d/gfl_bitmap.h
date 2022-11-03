@@ -19,11 +19,14 @@ enum GFLBitmapType
 
 SWAN_CPPTYPE_EX(gfl::g2d, Bitmap, GFLBitmap)
 
+#include "ns/g2d/res/ResCharacter.h"
+#include "gfl/core/gfl_heap.h"
+
 C_DECL_BEGIN
 
 extern GFLBitmap*  GFL_BitmapCreate(u32 tileWidth, u32 tileHeight, u32 bytesPerTile, HeapID heapId);
-extern GFLBitmap*  GFL_BitmapWrap(u8* pixelData, u16 tileWidth, u16 tileHeight, u32 bytesPerTile, HeapID heapId);
-extern GFLBitmap*  GFL_BitmapWrapVRAM(u8* pixelData, u16 tileWidth, u16 tileHeight, u32 bytesPerTile, HeapID heapId);
+extern GFLBitmap*  GFL_BitmapWrap(void* pixelData, u16 tileWidth, u16 tileHeight, u32 bytesPerTile, HeapID heapId);
+extern GFLBitmap*  GFL_BitmapWrapVRAM(void* pixelData, u16 tileWidth, u16 tileHeight, u32 bytesPerTile, HeapID heapId);
 extern void        GFL_BitmapFree(GFLBitmap* bmp);
 extern u8*         GFL_BitmapGetPixelData(GFLBitmap* bmp);
 extern u32         GFL_BitmapGetWidth(GFLBitmap* bmp);
@@ -54,11 +57,11 @@ struct GFLBitmap
         return GFL_BitmapCreate(tileWidth, tileHeight, bytesPerTile, heapId);
     }
 
-    INLINE static gfl::g2d::Bitmap* Wrap(u8* pixelData, u16 tileWidth, u16 tileHeight, u32 bytesPerTile, HeapID heapId) {
+    INLINE static gfl::g2d::Bitmap* Wrap(void* pixelData, u16 tileWidth, u16 tileHeight, u32 bytesPerTile, HeapID heapId) {
         return GFL_BitmapWrap(pixelData, tileWidth, tileHeight, bytesPerTile, heapId);
     }
 
-    INLINE static gfl::g2d::Bitmap* WrapVRAM(u8* pixelData, u16 tileWidth, u16 tileHeight, u32 bytesPerTile, HeapID heapId) {
+    INLINE static gfl::g2d::Bitmap* WrapVRAM(void* pixelData, u16 tileWidth, u16 tileHeight, u32 bytesPerTile, HeapID heapId) {
         return GFL_BitmapWrapVRAM(pixelData, tileWidth, tileHeight, bytesPerTile, heapId);
     }
 
@@ -110,7 +113,7 @@ struct GFLBitmap
         return GFL_BitmapCalcPixelDataSize(this);
     }
 
-    INLINE void ConvFromCHAR(NNSG2DResCharHeader* ncgr, HeapID heapId) {
+    INLINE void ConvFromCHAR(ns::g2d::res::CharHeader* ncgr, HeapID heapId) {
         GFL_BitmapConvFromCHAR(this, ncgr, heapId);
     }
 
@@ -118,4 +121,4 @@ struct GFLBitmap
 };
 
 #endif //__GFL_BITMAP_H
-//2022-09-28 13:26 / Tchaikovsky code generator
+//2022-11-02 23:13 / Tchaikovsky code generator

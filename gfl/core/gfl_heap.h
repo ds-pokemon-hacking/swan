@@ -8,7 +8,7 @@
 #define GFL_HEAP__FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)
 
 #define GFL_NEW(heapId, type) (type*) GFL_HeapAllocate((heapId), sizeof(type), 0, GFL_HEAP__FILENAME__, __LINE__)
-#define GFL_NEW_ARRAY(heapId, type, count) (type*) GFL_HeapAllocate((heapId), sizeof(type) * count, 0, GFL_HEAP__FILENAME__, __LINE__)
+#define GFL_NEW_ARRAY(heapId, type, count) (type*) GFL_HeapAllocate((heapId), sizeof(type) * (count), 0, GFL_HEAP__FILENAME__, __LINE__)
 
 #define GFL_MALLOC(heapId, size) GFL_HeapAllocate((heapId), (size), 0, GFL_HEAP__FILENAME__, __LINE__)
 #define GFL_CALLOC(heapId, size) GFL_HeapAllocate((heapId), (size), 1, GFL_HEAP__FILENAME__, __LINE__)
@@ -121,4 +121,4 @@ struct GFLHeapManager
 extern GFLHeapManager* g_HeapMgr;
 
 #endif //__GFL_HEAP_H
-//2022-09-28 13:26 / Tchaikovsky code generator
+//2022-11-02 23:13 / Tchaikovsky code generator
