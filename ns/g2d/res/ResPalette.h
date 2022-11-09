@@ -27,4 +27,4 @@ struct NNSG2DResPaletteBlock
 };
 
 #endif //__RESPALETTE_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

@@ -58,4 +58,4 @@ union EventFieldEffectSub
 };
 
 #endif //__EVENT_FIELD_EFFECT_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

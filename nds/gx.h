@@ -6,8 +6,11 @@
 
 STRUCT_DECLARE(G2DBGTransformRegs)
 STRUCT_DECLARE(G2DBlendRegs)
+UNION_DECLARE(BGCntBit12)
+STRUCT_DECLARE(BGCntReg)
 STRUCT_DECLARE(LCDIO)
 STRUCT_DECLARE(StdPalette)
+STRUCT_DECLARE(DispCntReg)
 
 ENUM_DECLARE(GXLightID)
 ENUM_DECLARE(GEPixelFormat)
@@ -417,12 +420,33 @@ struct G2DBlendRegs
     u16 UNUSED6;
 };
 
+union BGCntBit12 {
+u32 ExtPltSlot:1;
+u32 DispAreaOverflow:1;
+};
+
+struct BGCntReg {
+union {
+    struct {
+    u16 Priority:2;
+    u16 CharBase:4;
+    u16 Mosaic:1;
+    u16 ColorPaletteMode:1;
+    u16 ScreenBase:5;
+    u16 Bit12:1;
+    u16 ScreenSize:2;
+    };
+    u16 RawBits;
+};
+};
+static_assert(sizeof(BGCntReg) == sizeof(u16));
+
 struct LCDIO
 {
-    u16 BG0CNT;
-    u16 BG1CNT;
-    u16 BG2CNT;
-    u16 BG3CNT;
+    BGCntReg BG0CNT;
+    BGCntReg BG1CNT;
+    BGCntReg BG2CNT;
+    BGCntReg BG3CNT;
     u16 BG0HOFS;
     u16 BG0VOFS;
     u16 BG1HOFS;
@@ -448,6 +472,33 @@ struct StdPalette
     GXColor Colors[256];
 };
 
+struct DispCntReg {
+union {
+    struct {
+    u32 BGMode:3;
+    u32 IsBG03D:1;
+    u32 TileOBJMapping:1;
+    u32 BitmapOBJSize:1;
+    u32 BitmapOBJMapping:1;
+    u32 ForcedBlank:1;
+    u32 DispBGs:5;
+    u32 DispWnd0:1;
+    u32 DispWnd1:1;
+    u32 DispObjWnd:1;
+    u32 DisplayMode:2;
+    u32 VRAMBlock:2;
+    u32 TileOBJBoundary:2;
+    u32 BitmapOBJBoundary:1;
+    u32 ProcessOBJInHBlank:1;
+    u32 CharBase:3;
+    u32 ScreenBase:3;
+    u32 EnableBGExtPlt;
+    u32 EnableOBJExtPlt;
+    };
+    u32 RawBits;
+};
+};
+
 extern LCDIO LCDIO_A;
 
 extern LCDIO LCDIO_B;
@@ -456,9 +507,9 @@ extern s16 MASTER_BRIGHT_A;
 
 extern s16 MASTER_BRIGHT_B;
 
-extern volatile int DISPCNT_A;
+extern volatile DispCntReg DISPCNT_A;
 
-extern volatile int DISPCNT_B;
+extern volatile DispCntReg DISPCNT_B;
 
 extern StdPalette STD_PALETTE_BG_A;
 
@@ -469,4 +520,4 @@ extern StdPalette STD_PALETTE_OBJ_A;
 extern StdPalette STD_PALETTE_OBJ_B;
 
 #endif //__GX_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

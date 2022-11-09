@@ -17,4 +17,4 @@ extern int         cp15_invalidateDCAll();
 C_DECL_END
 
 #endif //__CP15_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

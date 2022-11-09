@@ -163,4 +163,4 @@ struct gfl::g3d::CameraPerspective : public gfl::g3d::Camera {
 #endif //__cplusplus
 
 #endif //__GFL_G3D_CAMERA_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

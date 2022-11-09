@@ -25,4 +25,4 @@ struct FieldActorG3DObjEntry
 };
 
 #endif //__FIELD_MMODEL_G3DOBJ_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

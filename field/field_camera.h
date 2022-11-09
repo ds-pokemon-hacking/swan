@@ -137,4 +137,4 @@ struct FieldCamera
 };
 
 #endif //__FIELD_CAMERA_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

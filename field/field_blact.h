@@ -108,4 +108,4 @@ struct FldBlActLiveActor
 };
 
 #endif //__FIELD_BLACT_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

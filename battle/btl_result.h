@@ -21,4 +21,4 @@ enum BattleResult
 SWAN_CPPTYPE_EX(battle, Result, BattleResult)
 
 #endif //__BTL_RESULT_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

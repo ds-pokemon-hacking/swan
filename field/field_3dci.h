@@ -99,4 +99,4 @@ struct Fld3DCiG2DMaterial
 };
 
 #endif //__FIELD_3DCI_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

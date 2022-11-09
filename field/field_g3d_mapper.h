@@ -89,4 +89,4 @@ struct FieldChunkHandle
 };
 
 #endif //__FIELD_G3D_MAPPER_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

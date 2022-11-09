@@ -3009,12 +3009,52 @@ SourceFiles:
       - Definition:
           Content: "struct PlayerVolumeFader\n{\n  u8 PlayerIndex;\n  u8 SrcVolume;\n  u8 DstVolume;\n  u8 _padDstVolume;\n  u16 EndFrame;\n  u16 NowFrame;\n  u8 Mute;\n  u8 _padMute;\n};\n"
         Methods:
+  - Path: gfl/str/gfl_systemfont.h
+    Includes:
+      - gfl/str/gfl_textprint.h
+    Typedefs:
+    GVars:
+    Functions:
+      - Content: void __fastcall GFL_SystemFontInit(const char *path)
+      - Content: void __fastcall GFL_SystemFontGetGlyph(u32 glyphIndex, TextPrint *textPrint)
+      - Content: u32 __fastcall GFL_SystemFontUnpackBits(u8 data)
+      - Content: u8 __fastcall GFL_SystemFontGetHeight()
+      - Content: u32 __fastcall GFL_SystemFontGetTabSize()
+      - Content: void __fastcall GFL_SystemFontSetColorIndices(u32 primaryIndex, u32 secondaryIndex)
+    Enums:
+    Structures:
+      - Definition:
+          Content: "struct SystemFontData\n{\n  u32 GlyphsOffset;\n  u32 GlyphWidthsOffset;\n  u32 GlyphCount;\n  u8 CellWidth;\n  u8 CellHeight;\n  u8 LetterSpacing;\n  u8 LineSpacing;\n};\n"
+        Methods:
+      - Definition:
+          CPPName: "gfl::str::SystemFont"
+          Content: "struct SystemFont\n{\n  SystemFontData *FontData;\n  u32 PrimaryColorIndexMask;\n  u32 SecondaryColorIndexMask;\n  b32 IsUsingEmbeddedFont;\n};\n"
+        Methods:
+          - CPPName: Init
+            CName: GFL_SystemFontInit
+            IsStatic: true
+          - CPPName: GetGlyph
+            CName: GFL_SystemFontGetGlyph
+            IsStatic: true
+          - CPPName: UnpackBits
+            CName: GFL_SystemFontUnpackBits
+            IsStatic: true
+          - CPPName: GetHeight
+            CName: GFL_SystemFontGetHeight
+            IsStatic: true
+          - CPPName: GetTabSize
+            CName: GFL_SystemFontGetTabSize
+            IsStatic: true
+          - CPPName: SetColorIndices
+            CName: GFL_SystemFontSetColorIndices
+            IsStatic: true
   - Path: gfl/str/gfl_textprint.h
     Includes:
       - gfl/g2d/gfl_bitmap.h
     Typedefs:
     GVars:
       - Content: TextPrintState g_DebugPrintState;
+      - Content: TextPrint* g_TextPrint;
     Functions:
       - Content: void __fastcall GFL_TextPrintInit(const char *fontPath)
       - Content: void __fastcall GFL_TextPrintDrawIndices(u16 *printstr, TextPrintState *state)
@@ -3023,10 +3063,38 @@ SourceFiles:
       - Content: u32 __fastcall GFL_TextPrintASCIIToIndex(u32 character)
       - Content: int __fastcall GFL_TextPrintSJISToIndex(u32 character)
     Enums:
+      - Definition:
+          CPPName: "gfl::str::TextPrintSpecialChar"
+          Content: "enum TextPrintSpecialChar\n{\n  TEXTPRINT_NULL = 0x0,\n  TEXTPRINT_LF = 0x1,\n  TEXTPRINT_TAB = 0x2,\n  TEXTPRINT_MA = 0x3,\n  TEXTPRINT_SPECIAL_CHAR_END = 0x4,\n  TEXTPRINT_CR = 0xFFFE,\n};\n"
+        DefineFlagOps: false
     Structures:
       - Definition:
-          Content: "struct TextPrintState\n{\n  GFLBitmap *m_Bitmap;\n  u16 OutOffsX;\n  u16 OutOffsY;\n  u8 LetterSpacing;\n  u8 LineSpacing;\n  u8 ColorIndices;\n  u8 _Padding;\n};\n"
+          CPPName: "gfl::str::TextPrintState"
+          Content: "struct TextPrintState\n{\n  GFLBitmap *m_Bitmap;\n  u16 OutOffsX;\n  u16 OutOffsY;\n  u8 LetterSpacing;\n  u8 LineSpacing;\n  u8 GlyphColorIndex:4;\n  u8 BGColorIndex:4;\n  u8 _Padding;\n};\n"
         Methods:
+      - Definition:
+          CPPName: "gfl::str::TextPrint"
+          Content: "struct TextPrint\n{\n  u8 CharBitmapBuffer[32];\n  u8 CharWidth;\n  u8 _padCharWidth;\n  u16 OutOffsX;\n  u16 OutOffsY;\n};\n"
+        Methods:
+          - CPPName: Init
+            CName: GFL_TextPrintInit
+            IsStatic: true
+          - CPPName: StringToIndices
+            CName: GFL_TextPrintStringToIndices
+            IsStatic: true
+          - CPPName: ASCIIToIndex
+            CName: GFL_TextPrintASCIIToIndex
+            IsStatic: true
+          - CPPName: SJISToIndex
+            CName: GFL_TextPrintSJISToIndex
+            IsStatic: true
+          - CPPName: DrawIndices
+            CName: GFL_TextPrintDrawIndices
+            IsStatic: true
+          - CPPName: DrawString
+            CName: GFL_TextPrintDrawString
+            IsStatic: true
+    Macros: "#define GFL_TEXTPRINT_ASCII_HI 0x80\n#define GFL_TEXTPRINT_ASCII_EXT_LO 0xA0\n#define GFL_TEXTPRINT_ASCII_EXT_HI 0xDF\n#define GFL_TEXTPRINT_IS_ASCII(character) ((((unsigned char)(character)) <= GFL_TEXTPRINT_ASCII_HI)\\n|| (((unsigned char)(character)) >= GFL_TEXTPRINT_ASCII_EXT_LO \\n&& ((unsigned char)(character)) <= GFL_TEXTPRINT_ASCII_EXT_HI))"
   - Path: math/angle.h
     Includes:
       - math/fixed.h
@@ -3527,8 +3595,8 @@ SourceFiles:
       - Content: LCDIO LCDIO_B;
       - Content: s16 MASTER_BRIGHT_A;
       - Content: s16 MASTER_BRIGHT_B;
-      - Content: volatile int DISPCNT_A;
-      - Content: volatile int DISPCNT_B;
+      - Content: volatile DispCntReg DISPCNT_A;
+      - Content: volatile DispCntReg DISPCNT_B;
       - Content: StdPalette STD_PALETTE_BG_A;
       - Content: StdPalette STD_PALETTE_BG_B;
       - Content: StdPalette STD_PALETTE_OBJ_A;
@@ -3737,11 +3805,21 @@ SourceFiles:
           Content: "struct G2DBlendRegs\n{\n  u16 BLDCNT;\n  u16 BLDALPHA;\n  u16 BLDY;\n  u16 UNUSED6;\n};\n"
         Methods:
       - Definition:
-          Content: "struct LCDIO\n{\n  u16 BG0CNT;\n  u16 BG1CNT;\n  u16 BG2CNT;\n  u16 BG3CNT;\n  u16 BG0HOFS;\n  u16 BG0VOFS;\n  u16 BG1HOFS;\n  u16 BG1VOFS;\n  u16 BG2HOFS;\n  u16 BG2VOFS;\n  u16 BG3HOFS;\n  u16 BG3VOFS;\n  G2DBGTransformRegs BG2Transform;\n  G2DBGTransformRegs BG3Transform;\n  u16 WIN0H;\n  u16 WIN1H;\n  u16 WIN0V;\n  u16 WIN1V;\n  u16 WININ;\n  u16 WINOUT;\n  u32 MOSAIC;\n  G2DBlendRegs BLD;\n};\n"
+          Content: "union BGCntBit12 {\n	u32 ExtPltSlot:1;\n	u32 DispAreaOverflow:1;\n};"
+        Methods:
+      - Definition:
+          Content: "struct BGCntReg {\n	union {\n		struct {\n			u16 Priority:2;\n			u16 CharBase:4;\n			u16 Mosaic:1;\n			u16 ColorPaletteMode:1;\n			u16 ScreenBase:5;\n			u16 Bit12:1;\n			u16 ScreenSize:2;\n		};\n		u16 RawBits;\n	};\n};\nstatic_assert(sizeof(BGCntReg) == sizeof(u16));"
+        Methods:
+      - Definition:
+          Content: "struct LCDIO\n{\n  BGCntReg BG0CNT;\n  BGCntReg BG1CNT;\n  BGCntReg BG2CNT;\n  BGCntReg BG3CNT;\n  u16 BG0HOFS;\n  u16 BG0VOFS;\n  u16 BG1HOFS;\n  u16 BG1VOFS;\n  u16 BG2HOFS;\n  u16 BG2VOFS;\n  u16 BG3HOFS;\n  u16 BG3VOFS;\n  G2DBGTransformRegs BG2Transform;\n  G2DBGTransformRegs BG3Transform;\n  u16 WIN0H;\n  u16 WIN1H;\n  u16 WIN0V;\n  u16 WIN1V;\n  u16 WININ;\n  u16 WINOUT;\n  u32 MOSAIC;\n  G2DBlendRegs BLD;\n};\n"
         Methods:
       - Definition:
           Content: "struct StdPalette\n{\n  GXColor Colors[256];\n};\n"
         Methods:
+      - Definition:
+          Content: "struct DispCntReg {\n	union {\n		struct {\n			u32 BGMode:3;\n			u32 IsBG03D:1;\n			u32 TileOBJMapping:1;\n			u32 BitmapOBJSize:1;\n			u32 BitmapOBJMapping:1;\n			u32 ForcedBlank:1;\n			u32 DispBGs:5;\n			u32 DispWnd0:1;\n			u32 DispWnd1:1;\n			u32 DispObjWnd:1;\n			u32 DisplayMode:2;\n			u32 VRAMBlock:2;\n			u32 TileOBJBoundary:2;\n			u32 BitmapOBJBoundary:1;\n			u32 ProcessOBJInHBlank:1;\n			u32 CharBase:3;\n			u32 ScreenBase:3;\n			u32 EnableBGExtPlt;\n			u32 EnableOBJExtPlt;\n		};\n		u32 RawBits;\n	};\n};"
+        Methods:
+    Macros: 
   - Path: nds/hid.h
     Includes:
     Typedefs:

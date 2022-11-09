@@ -121,4 +121,4 @@ struct GFLHeapManager
 extern GFLHeapManager* g_HeapMgr;
 
 #endif //__GFL_HEAP_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

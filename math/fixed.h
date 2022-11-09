@@ -25,4 +25,4 @@ extern fx32    fx_div_get_result();
 C_DECL_END
 
 #endif //__FIXED_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

@@ -10,4 +10,4 @@ extern b32 hw_isDSi();
 C_DECL_END
 
 #endif //__HW_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

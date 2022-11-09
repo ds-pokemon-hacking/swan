@@ -586,4 +586,4 @@ namespace gfl::g2d {
 #endif
 
 #endif //__GFL_BG_SYS_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

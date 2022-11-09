@@ -167,4 +167,4 @@ struct gfl::fs::ArcSystem {
 #endif //__cplusplus
 
 #endif //__GFL_ARCHIVE_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator

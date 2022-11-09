@@ -28,4 +28,4 @@ struct SinCosEntry
 extern SinCosEntry FX_SIN_COS_TABLE[4096];
 
 #endif //__ANGLE_H
-//2022-11-02 23:13 / Tchaikovsky code generator
+// Tchaikovsky code generator
