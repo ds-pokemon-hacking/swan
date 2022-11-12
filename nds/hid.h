@@ -2,6 +2,7 @@
 #define __HID_H
 
 #include "swantypes.h"
+#include "swan_cpp_enum_ops.h"
 
 ENUM_DECLARE(InputButton)
 
@@ -25,6 +26,7 @@ enum InputButton
     KEY_TOUCH = 0x1000,
     KEY_LID = 0x2000,
 };
+DEFINE_ENUM_FLAG_OPERATORS(InputButton)
 
 #endif //__HID_H
 // Tchaikovsky code generator

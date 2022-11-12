@@ -1772,33 +1772,6 @@ SourceFiles:
           - CPPName: AddTask
             CName: GFL_TCBMgrAddTask
             IsStatic: false
-  - Path: gfl/core/gfl_tcb_global.h
-    Includes:
-      - gfl/core/gfl_tcb.h
-    Typedefs:
-    GVars:
-    Functions:
-      - Content: TCBManager* GFL_G2DGetTCBMgr()
-      - Content: TCB* GFL_G2DTCBAdd(TCBFunc callback, void *data, u32 priority)
-      - Content: TCB* GFL_IRQHBlankTCBAdd(TCBFunc callback, void *data, u32 priority)
-      - Content: void GFL_IRQHBlankTCBUpdate()
-    Enums:
-    Structures:
-      - Definition:
-          Content: "struct gfl::core::GlobalTCB {\n};"
-        Methods:
-          - CPPName: GetG2DTCBMgr
-            CName: GFL_G2DGetTCBMgr
-            IsStatic: true
-          - CPPName: AddG2DTCB
-            CName: GFL_G2DTCBAdd
-            IsStatic: true
-          - CPPName: AddHBlankTCB
-            CName: GFL_IRQHBlankTCBAdd
-            IsStatic: true
-          - CPPName: UpdateHBlankTCBs
-            CName: GFL_IRQHBlankTCBUpdate
-            IsStatic: true
   - Path: gfl/core/gfl_vrammgr.h
     Includes:
       - gfl/core/gfl_areaman.h
@@ -2488,6 +2461,23 @@ SourceFiles:
           - CPPName: SetUpdateFreqOne
             CName: GFL_FadeSetUpdateFreqOne
             IsStatic: true
+  - Path: gfl/g2d/gfl_vhblank.h
+    Includes:
+      - gfl/core/gfl_tcb.h
+    Typedefs:
+      - Content: "typedef void (__fastcall *VBlankCallback)(void *);\n"
+    GVars:
+    Functions:
+      - Content: void __fastcall GFL_HBlankTCBUpdate()
+      - Content: TCB *__fastcall GFL_HBlankTCBAdd(TCBFunc callback, void *data, u32 priority)
+      - Content: void __fastcall GFL_VBlankExecCallback()
+      - Content: b32 __fastcall GFL_VBlankSetCallback(VBlankCallback callback, void *data)
+      - Content: void __fastcall GFL_VBlankResetCallback()
+      - Content: u32 __fastcall GFL_VBlankUpdate()
+      - Content: TCB *__fastcall GFL_VBlankTCBAdd(TCBFunc callback, void *data, u32 priority)
+      - Content: TCBManager *__fastcall GFL_VBlankGetTCBMgr()
+    Enums:
+    Structures:
   - Path: gfl/g3d/gfl_blact.h
     Includes:
       - nds/gx.h
@@ -3014,6 +3004,7 @@ SourceFiles:
       - gfl/str/gfl_textprint.h
     Typedefs:
     GVars:
+      - Content: SystemFont* g_SystemFont;
     Functions:
       - Content: void __fastcall GFL_SystemFontInit(const char *path)
       - Content: void __fastcall GFL_SystemFontGetGlyph(u32 glyphIndex, TextPrint *textPrint)
@@ -3601,6 +3592,20 @@ SourceFiles:
       - Content: StdPalette STD_PALETTE_BG_B;
       - Content: StdPalette STD_PALETTE_OBJ_A;
       - Content: StdPalette STD_PALETTE_OBJ_B;
+      - Content: u16 g_GfxVRAMLCDCBanks;
+      - Content: u16 g_GfxVRAMBGBanksA;
+      - Content: u16 g_GfxVRAMObjBanksA;
+      - Content: u16 g_GfxVRAMPlainARM7Banks;
+      - Content: u16 g_GfxVRAMTexBanks;
+      - Content: u16 g_GfxVRAMPltBanks;
+      - Content: u16 g_GfxVRAMRearPlaneImageBanks;
+      - Content: u16 g_GfxVRAMBGExtPltBanksA;
+      - Content: u16 g_GfxVRAMObjExtPltBanksA;
+      - Content: u16 g_GfxVRAMBGBanksB;
+      - Content: u16 g_GfxVRAMObjBanksB;
+      - Content: u16 g_GfxVRAMBGExtPltBanksB;
+      - Content: u16 g_GfxVRAMObjExtPltBanksB;
+      - Content: volatile PowCntReg POWCNT1;
     Functions:
       - Content: void __fastcall gfxInit()
       - Content: b32 __fastcall gfxUploadAsync(GfxUploadTarget target, u32 dstOffset, void *src, size_t size)
@@ -3819,7 +3824,9 @@ SourceFiles:
       - Definition:
           Content: "struct DispCntReg {\n	union {\n		struct {\n			u32 BGMode:3;\n			u32 IsBG03D:1;\n			u32 TileOBJMapping:1;\n			u32 BitmapOBJSize:1;\n			u32 BitmapOBJMapping:1;\n			u32 ForcedBlank:1;\n			u32 DispBGs:5;\n			u32 DispWnd0:1;\n			u32 DispWnd1:1;\n			u32 DispObjWnd:1;\n			u32 DisplayMode:2;\n			u32 VRAMBlock:2;\n			u32 TileOBJBoundary:2;\n			u32 BitmapOBJBoundary:1;\n			u32 ProcessOBJInHBlank:1;\n			u32 CharBase:3;\n			u32 ScreenBase:3;\n			u32 EnableBGExtPlt;\n			u32 EnableOBJExtPlt;\n		};\n		u32 RawBits;\n	};\n};"
         Methods:
-    Macros: 
+      - Definition:
+          Content: "struct PowCntReg {\n	union {\n		struct {\n			u16 BothLCDs:1;\n			u16 Engine2DA:1;\n			u16 RenderingEngine:1;\n			u16 GeometryEngine:1;\n			u16 _NotUsed:5;\n			u16 Engine2DB:1;\n			u16 _NotUsed2:5;\n			u16 DispLayout:1;		\n		};\n		u16 RawBits;\n	};\n};"
+        Methods:
   - Path: nds/hid.h
     Includes:
     Typedefs:
@@ -3828,7 +3835,7 @@ SourceFiles:
     Enums:
       - Definition:
           Content: "enum InputButton\n{\n  KEY_A = 0x1,\n  KEY_B = 0x2,\n  KEY_SELECT = 0x4,\n  KEY_START = 0x8,\n  KEY_RIGHT = 0x10,\n  KEY_LEFT = 0x20,\n  KEY_UP = 0x40,\n  KEY_DOWN = 0x80,\n  KEY_R = 0x100,\n  KEY_L = 0x200,\n  KEY_X = 0x400,\n  KEY_Y = 0x800,\n  KEY_TOUCH = 0x1000,\n  KEY_LID = 0x2000,\n};\n"
-        DefineFlagOps: false
+        DefineFlagOps: true
     Structures:
   - Path: nds/hw.h
     Includes:
@@ -3838,6 +3845,26 @@ SourceFiles:
       - Content: b32 __fastcall hw_isDSi()
     Enums:
     Structures:
+  - Path: nds/irq.h
+    Includes:
+    Typedefs:
+    GVars:
+      - Content: volatile IRQFlagReg IE;
+      - Content: volatile IRQFlagReg IF;
+      - Content: volatile int IME;
+    Functions:
+      - Content: void __fastcall irq_waitFor(b32 clear, CPUInterruptBit mask)
+    Enums:
+      - Definition:
+          Content: "enum CPUInterrupt\n{\n  CPU_INTR_VBLANK = 0x0,\n  CPU_INTR_HBLANK = 0x1,\n  CPU_INTR_VCOUNT_MATCH = 0x2,\n  CPU_INTR_TIMER_0 = 0x3,\n  CPU_INTR_TIMER_1 = 0x4,\n  CPU_INTR_TIMER_2 = 0x5,\n  CPU_INTR_TIMER_3 = 0x6,\n  CPU_INTR_NDS7_RTC = 0x7,\n  CPU_INTR_DMA_0 = 0x8,\n  CPU_INTR_DMA_1 = 0x9,\n  CPU_INTR_DMA_2 = 0xA,\n  CPU_INTR_DMA_3 = 0xB,\n  CPU_INTR_KEYPAD = 0xC,\n  CPU_INTR_GBA_SLOT = 0xD,\n  CPU_INTR_IPC_SYNC = 0xE,\n  CPU_INTR_IPC_SEND_FIFO_EMPTY = 0xF,\n  CPU_INTR_IPC_RECV_FIFO_NOT_EMPTY = 0x10,\n  CPU_INTR_CART_TRANSFER_DONE = 0x11,\n  CPU_INTR_CART_IREQ_MC = 0x12,\n  CPU_INTR_NDS9_GE_FIFO = 0x13,\n  CPU_INTR_NDS7_SCREEN_UNFOLD = 0x14,\n  CPU_INTR_NDS7_SPI = 0x15,\n  CPU_INTR_NDS7_WIFI = 0x16,\n  CPU_INTR_NDS9_MAX = 0x16,\n  CPU_INTR_DSI9_CAMERA = 0x17,\n  CPU_INTR_DSI9_UNDOC = 0x18,\n  CPU_INTR_DSI_IREQ_MC_2 = 0x19,\n  CPU_INTR_DSI_DMA_EX_0 = 0x1A,\n  CPU_INTR_DSI_DMA_EX_1 = 0x1B,\n  CPU_INTR_DSI_DMA_EX_2 = 0x1C,\n  CPU_INTR_DSI_DMA_EX_3 = 0x1D,\n};\n"
+        DefineFlagOps: false
+      - Definition:
+          Content: "enum CPUInterruptBit\n{\n  CPU_INTRB_VBLANK = 0x1,\n  CPU_INTRB_HBLANK = 0x2,\n  CPU_INTRB_VCOUNT_MATCH = 0x4,\n  CPU_INTRB_TIMER_0 = 0x8,\n  CPU_INTRB_TIMER_1 = 0x10,\n  CPU_INTRB_TIMER_2 = 0x20,\n  CPU_INTRB_TIMER_3 = 0x40,\n  CPU_INTRB_NDS7_RTC = 0x80,\n  CPU_INTRB_DMA_0 = 0x100,\n  CPU_INTRB_DMA_1 = 0x200,\n  CPU_INTRB_DMA_2 = 0x400,\n  CPU_INTRB_DMA_3 = 0x800,\n  CPU_INTRB_KEYPAD = 0x1000,\n  CPU_INTRB_GBA_SLOT = 0x2000,\n  CPU_INTRB_IPC_SYNC = 0x10000,\n  CPU_INTRB_IPC_SEND_FIFO_EMPTY = 0x20000,\n  CPU_INTRB_IPC_RECV_FIFO_NOT_EMPTY = 0x40000,\n  CPU_INTRB_CART_TRANSFER_DONE = 0x80000,\n  CPU_INTRB_CART_IREQ_MC = 0x100000,\n  CPU_INTRB_NDS9_GE_FIFO = 0x200000,\n  CPU_INTRB_NDS7_SCREEN_UNFOLD = 0x400000,\n  CPU_INTRB_NDS7_SPI = 0x800000,\n  CPU_INTRB_NDS7_WIFI = 0x1000000,\n  CPU_INTRB_DSI9_CAMERA = 0x2000000,\n  CPU_INTRB_DSI9_UNDOC = 0x4000000,\n  CPU_INTRB_DSI_IREQ_MC_2 = 0x8000000,\n  CPU_INTRB_DSI_DMA_EX_0 = 0x10000000,\n  CPU_INTRB_DSI_DMA_EX_1 = 0x20000000,\n  CPU_INTRB_DSI_DMA_EX_2 = 0x40000000,\n  CPU_INTRB_DSI_DMA_EX_3 = 0x80000000,\n};\n"
+        DefineFlagOps: true
+    Structures:
+      - Definition:
+          Content: "struct IRQFlagReg {\n	union {\n		struct {\n			u32 VBlank:1;\n			u32 HBlank:1;\n			u32 VCountMatch:1;\n			u32 Timer0:1;\n			u32 Timer1:1;\n			u32 Timer2:1;\n			u32 Timer3:1;\n			u32 RTC:1;\n			u32 DMA0:1;\n			u32 DMA1:1;\n			u32 DMA2:1;\n			u32 DMA3:1;\n			u32 Keypad:1;\n			u32 GBASlot:1;\n			u32 IPCSync:1;\n			u32 IPCSendEmpty:1;\n			u32 IPCRecvNotEmpty:1;\n			u32 CartTransferDone:1;\n			u32 CartIreqMC:1;\n			u32 GEFIFO:1;\n			u32 ScreenUnfold:1;\n			u32 SPI:1;\n			u32 WiFi:1;\n		};\n		CPUInterruptBit RawBits;\n	};\n};"
+        Methods:
   - Path: nds/mem.h
     Includes:
     Typedefs:
@@ -3938,6 +3965,27 @@ SourceFiles:
     Structures:
       - Definition:
           Content: "struct SoundChannel\n{\n  u32 ChannelNo;\n  s32 SampleRate;\n  b32 IsPlaying;\n  u32 field_C;\n  u32 PacketIndex;\n};\n"
+        Methods:
+  - Path: nds/svc.h
+    Includes:
+    Typedefs:
+    GVars:
+    Functions:
+      - Content: void __fastcall SVC_WaitByLoop(u32 delay)
+      - Content: void __fastcall SVC_SoftReset()
+    Enums:
+    Structures:
+  - Path: nds/timer.h
+    Includes:
+    Typedefs:
+    GVars:
+      - Content: volatile u16 TM0CNT_L;
+      - Content: volatile TimerCntReg TM0CNT_H;
+    Functions:
+    Enums:
+    Structures:
+      - Definition:
+          Content: "struct TimerCntReg {\n	u16 Scale:2;\n	u16 Cascade:1;\n	u16 _NotUsed:3;\n	u16 IRQEnabled:1;\n	u16 Start:1;\n};"
         Methods:
   - Path: ns/cmn/res/ResBase.h
     Includes:
@@ -4392,25 +4440,26 @@ SourceFiles:
     Typedefs:
     GVars:
     Functions:
-      - Content: InputButton __fastcall GCTX_HIDGetNewPressKeys()
+      - Content: InputButton __fastcall GCTX_HIDGetPressedKeys()
       - Content: InputButton __fastcall GCTX_HIDGetHeldKeys()
-      - Content: InputButton __fastcall GCTX_HIDGetReleasedKeys()
+      - Content: InputButton __fastcall GCTX_HIDGetTypedKeys()
       - Content: void __fastcall GCTX_HIDSetUpdateRate(u8 updateRate)
       - Content: u8 __fastcall GCTX_HIDGetUpdateRate()
       - Content: void __fastcall GCTX_HIDChangeFPS(u8 fps)
+      - Content: void __fastcall GCTX_HIDUpdate()
     Enums:
     Structures:
       - Definition:
           Content: "struct game::HID {\n};"
         Methods:
-          - CPPName: GetNewKeys
-            CName: GCTX_HIDGetNewPressKeys
+          - CPPName: GetPressedKeys
+            CName: GCTX_HIDGetPressedKeys
             IsStatic: true
           - CPPName: GetHeldKeys
             CName: GCTX_HIDGetHeldKeys
             IsStatic: true
-          - CPPName: GetReleasedKeys
-            CName: GCTX_HIDGetReleasedKeys
+          - CPPName: GetTypedKeys
+            CName: GCTX_HIDGetTypedKeys
             IsStatic: true
           - CPPName: GetUpdateRate
             CName: GCTX_HIDGetUpdateRate
@@ -4421,6 +4470,10 @@ SourceFiles:
           - CPPName: ChangeFPS
             CName: GCTX_HIDChangeFPS
             IsStatic: true
+          - CPPName: Update
+            CName: GCTX_HIDUpdate
+            IsStatic: true
+    Macros: "#define HID_CHECK_KEY_PRESS(key) (GCTX_HIDGetPressedKeys() & (key))\n#define HID_CHECK_KEY_TYPED(key) (GCTX_HIDGetTypedKeys() & (key))\n#define HID_CHECK_KEY_DOWN(key) (GCTX_HIDGetHeldKeys() & (key))\n#define HID_CHECK_KEY_UP(key) (!HID_CHECK_KEY_DOWN(key))\n#define HID_CHECK_COMBO(combo) ((GCTX_HIDGetHeldKeys() & (combo)) == (combo))"
   - Path: system/gamesystem.h
     Includes:
       - system/game_event.h

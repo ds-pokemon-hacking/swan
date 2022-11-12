@@ -68,5 +68,7 @@ struct SystemFont
     #endif
 };
 
+extern SystemFont* g_SystemFont;
+
 #endif //__GFL_SYSTEMFONT_H
 // Tchaikovsky code generator

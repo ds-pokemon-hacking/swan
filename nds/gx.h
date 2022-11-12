@@ -11,6 +11,7 @@ STRUCT_DECLARE(BGCntReg)
 STRUCT_DECLARE(LCDIO)
 STRUCT_DECLARE(StdPalette)
 STRUCT_DECLARE(DispCntReg)
+STRUCT_DECLARE(PowCntReg)
 
 ENUM_DECLARE(GXLightID)
 ENUM_DECLARE(GEPixelFormat)
@@ -499,6 +500,22 @@ union {
 };
 };
 
+struct PowCntReg {
+union {
+    struct {
+    u16 BothLCDs:1;
+    u16 Engine2DA:1;
+    u16 RenderingEngine:1;
+    u16 GeometryEngine:1;
+    u16 _NotUsed:5;
+    u16 Engine2DB:1;
+    u16 _NotUsed2:5;
+    u16 DispLayout:1;		
+    };
+    u16 RawBits;
+};
+};
+
 extern LCDIO LCDIO_A;
 
 extern LCDIO LCDIO_B;
@@ -518,6 +535,34 @@ extern StdPalette STD_PALETTE_BG_B;
 extern StdPalette STD_PALETTE_OBJ_A;
 
 extern StdPalette STD_PALETTE_OBJ_B;
+
+extern u16 g_GfxVRAMLCDCBanks;
+
+extern u16 g_GfxVRAMBGBanksA;
+
+extern u16 g_GfxVRAMObjBanksA;
+
+extern u16 g_GfxVRAMPlainARM7Banks;
+
+extern u16 g_GfxVRAMTexBanks;
+
+extern u16 g_GfxVRAMPltBanks;
+
+extern u16 g_GfxVRAMRearPlaneImageBanks;
+
+extern u16 g_GfxVRAMBGExtPltBanksA;
+
+extern u16 g_GfxVRAMObjExtPltBanksA;
+
+extern u16 g_GfxVRAMBGBanksB;
+
+extern u16 g_GfxVRAMObjBanksB;
+
+extern u16 g_GfxVRAMBGExtPltBanksB;
+
+extern u16 g_GfxVRAMObjExtPltBanksB;
+
+extern volatile PowCntReg POWCNT1;
 
 #endif //__GX_H
 // Tchaikovsky code generator
