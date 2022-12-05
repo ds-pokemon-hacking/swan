@@ -7,7 +7,7 @@ STRUCT_DECLARE(GameEvent)
 
 ENUM_DECLARE(GameEventReturnCode)
 
-typedef int (*GameEventCallback)(GameEvent*, int*, void*);
+typedef GameEventReturnCode (*GameEventCallback)(GameEvent*, u32*, void*);
 
 enum GameEventReturnCode
 #ifdef __cplusplus
@@ -80,6 +80,14 @@ struct GameEvent
 
     INLINE void ChainNext(gsys::Event* event) {
         GameEvent_ChainNext(this, event);
+    }
+
+    INLINE static gsys::Event* Create(gsys::GameSystem* gsys, gsys::Event* parentEvent, GameEventCallback callback, u32 evtDataSize) {
+        return GameEvent_Create(gsys, parentEvent, callback, evtDataSize);
+    }
+
+    INLINE static gsys::Event* CreateOverlayDelegate(gsys::GameSystem* gsys, int ovlId, GameEventProvider eventConstructor, void* eventData) {
+        return GameEvent_CreateOverlayDelegate(gsys, ovlId, eventConstructor, eventData);
     }
 
     #endif

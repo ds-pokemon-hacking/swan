@@ -40,7 +40,7 @@ struct Fld3DCi
     u16 Actor2AnmStartFrame;
     u16 IsParticleReqEnd;
     u16 FldEffID;
-    ScreenDisp BackupScreenDisp;
+    G2DScreenBGBit BackupScreenDisp;
     u8 BackupBGPriorities[4];
     b32 IsScreenCaptureDone;
     b32 IsParticleBegun;

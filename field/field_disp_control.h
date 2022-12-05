@@ -26,22 +26,22 @@ enum FieldDispControlScreen
 
 struct FieldDispControlParamSetAlpha
 {
-    TargetPixel TargetPx1;
-    TargetPixel TargetPx2;
+    G2DTargetPixel TargetPx1;
+    G2DTargetPixel TargetPx2;
     s32 EvA;
     s32 EvB;
 };
 
 struct FieldDispControlParamSetBrightness
 {
-    TargetPixel TargetPx;
+    G2DTargetPixel TargetPx;
     s32 EvY;
 };
 
 struct FieldDispControlParamSetAll
 {
-    TargetPixel TargetPx1;
-    TargetPixel TargetPx2;
+    G2DTargetPixel TargetPx1;
+    G2DTargetPixel TargetPx2;
     s32 EvA;
     s32 EvB;
     s32 EvY;

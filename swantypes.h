@@ -8,7 +8,7 @@
 #ifdef __cplusplus
 #define STRUCT_DECLARE(tag) struct tag;
 #define UNION_DECLARE(tag) union tag;
-#define ENUM_DECLARE(tag)
+#define ENUM_DECLARE(tag) enum tag : u32;
 #else
 #define STRUCT_DECLARE(tag) typedef struct tag tag;
 #define UNION_DECLARE(tag) typedef union tag tag;

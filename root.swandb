@@ -73,7 +73,7 @@ SourceFiles:
     Enums:
     Structures:
       - Definition:
-          Content: "struct Fld3DCi\n{\n  void *m_ParticleSystem;\n  G3DCamera *m_CameraPersp;\n  G3DCamera *m_CameraOrtho;\n  G3DCameraProjectionMode CameraType;\n  HeapID m_HeapID;\n  u16 _padHeapID;\n  G3DManager *m_G3DScene;\n  u32 SceneNodeIdx;\n  SRTMatrix Transform;\n  u32 field_58;\n  u16 ParticleAnimStartFrame;\n  u16 ParticleAnim2StartFrame;\n  u16 Actor1AnmStartFrame;\n  u16 Actor2AnmStartFrame;\n  u16 IsParticleReqEnd;\n  u16 FldEffID;\n  ScreenDisp BackupScreenDisp;\n  u8 BackupBGPriorities[4];\n  b32 IsScreenCaptureDone;\n  b32 IsParticleBegun;\n  b32 field_78;\n  b32 Actor1HasAnim;\n  b32 Actor2HasAnim;\n  NNSG2DResCharHeader *G2DCharHeader;\n  NNSG2DResPaletteHeader *G2DPaletteHeader;\n  GFLBitmap *G2DBitmap;\n  NNSG2DResData *G2DNCGR;\n  NNSG2DResData *G2DNCLR;\n  EventFieldEffectSub SubData;\n  int field_B8[24];\n  Fld3DCiG2DMaterial *G2DMaterials;\n  u8 G2DMaterialDatID;\n  u8 G2DMaterialCount;\n  u8 MaterialIndex;\n  u8 _padMaterialIndex;\n  b32 PtclIsFinished;\n  b32 Actor1IsFinished;\n  b32 Actor2IsFinished;\n  void *SubEventCallback;\n  b32 (__fastcall *UpdateCallback)(GameEvent *, Fld3DCi *);\n  u32 UpdateCallbackState;\n  u16 FrameCounter;\n  u16 NextSoundKeyFrameIdx;\n  u16 NextFadeKeyFrameIdx;\n  u16 _padNextFadeKeyFrameIdx;\n  b32 LCDConfigTCBResult;\n  Fld3DCiFadeState *m_FadeState;\n};\n"
+          Content: "struct Fld3DCi\n{\n  void *m_ParticleSystem;\n  G3DCamera *m_CameraPersp;\n  G3DCamera *m_CameraOrtho;\n  G3DCameraProjectionMode CameraType;\n  HeapID m_HeapID;\n  u16 _padHeapID;\n  G3DManager *m_G3DScene;\n  u32 SceneNodeIdx;\n  SRTMatrix Transform;\n  u32 field_58;\n  u16 ParticleAnimStartFrame;\n  u16 ParticleAnim2StartFrame;\n  u16 Actor1AnmStartFrame;\n  u16 Actor2AnmStartFrame;\n  u16 IsParticleReqEnd;\n  u16 FldEffID;\n  G2DScreenBGBit BackupScreenDisp;\n  u8 BackupBGPriorities[4];\n  b32 IsScreenCaptureDone;\n  b32 IsParticleBegun;\n  b32 field_78;\n  b32 Actor1HasAnim;\n  b32 Actor2HasAnim;\n  NNSG2DResCharHeader *G2DCharHeader;\n  NNSG2DResPaletteHeader *G2DPaletteHeader;\n  GFLBitmap *G2DBitmap;\n  NNSG2DResData *G2DNCGR;\n  NNSG2DResData *G2DNCLR;\n  EventFieldEffectSub SubData;\n  int field_B8[24];\n  Fld3DCiG2DMaterial *G2DMaterials;\n  u8 G2DMaterialDatID;\n  u8 G2DMaterialCount;\n  u8 MaterialIndex;\n  u8 _padMaterialIndex;\n  b32 PtclIsFinished;\n  b32 Actor1IsFinished;\n  b32 Actor2IsFinished;\n  void *SubEventCallback;\n  b32 (__fastcall *UpdateCallback)(GameEvent *, Fld3DCi *);\n  u32 UpdateCallbackState;\n  u16 FrameCounter;\n  u16 NextSoundKeyFrameIdx;\n  u16 NextFadeKeyFrameIdx;\n  u16 _padNextFadeKeyFrameIdx;\n  b32 LCDConfigTCBResult;\n  Fld3DCiFadeState *m_FadeState;\n};\n"
         Methods:
       - Definition:
           Content: "struct Fld3DCiFadeState\n{\n  FadeMode Mode;\n  fx32 Value;\n  s32 TargetValue;\n  u32 MaxFrame;\n  u32 NowFrame;\n  s32 IncPerFrame;\n  TCB *m_TCB;\n};\n"
@@ -298,13 +298,13 @@ SourceFiles:
         DefineFlagOps: false
     Structures:
       - Definition:
-          Content: "struct FieldDispControlParamSetAlpha\n{\n  TargetPixel TargetPx1;\n  TargetPixel TargetPx2;\n  s32 EvA;\n  s32 EvB;\n};\n"
+          Content: "struct FieldDispControlParamSetAlpha\n{\n  G2DTargetPixel TargetPx1;\n  G2DTargetPixel TargetPx2;\n  s32 EvA;\n  s32 EvB;\n};\n"
         Methods:
       - Definition:
-          Content: "struct FieldDispControlParamSetBrightness\n{\n  TargetPixel TargetPx;\n  s32 EvY;\n};\n"
+          Content: "struct FieldDispControlParamSetBrightness\n{\n  G2DTargetPixel TargetPx;\n  s32 EvY;\n};\n"
         Methods:
       - Definition:
-          Content: "struct FieldDispControlParamSetAll\n{\n  TargetPixel TargetPx1;\n  TargetPixel TargetPx2;\n  s32 EvA;\n  s32 EvB;\n  s32 EvY;\n};\n"
+          Content: "struct FieldDispControlParamSetAll\n{\n  G2DTargetPixel TargetPx1;\n  G2DTargetPixel TargetPx2;\n  s32 EvA;\n  s32 EvB;\n  s32 EvY;\n};\n"
         Methods:
       - Definition:
           Content: "struct FieldDispControlParamAdjustAlpha\n{\n  s32 EvA;\n  s32 EvB;\n};\n"
@@ -392,6 +392,32 @@ SourceFiles:
     Structures:
       - Definition:
           Content: "struct EncEff\n{\n  void *EventData;\n  void (__fastcall *RenderFunc)(EncEff *);\n  Field *m_Field;\n  u32 SubOverlayIDs[3];\n  u32 SubOverlayCount;\n  void *WorkArea;\n};\n"
+        Methods:
+  - Path: field/field_event.h
+    Includes:
+      - system/gamesystem.h
+      - field/fieldmap.h
+      - system/game_event.h
+      - field/field_player.h
+    Typedefs:
+    GVars:
+    Functions:
+      - Content: void __fastcall FieldEventProvider_InitCheckData(FieldEventCheckData *dest, GameSystem *gsys, Field *field)
+      - Content: GameEvent *__fastcall FieldEventProvider_Grid(GameSystem *gsys, Field *field)
+      - Content: GameEvent *__fastcall FieldEventProvider_UnionRoom(GameSystem *gsys, Field *field)
+      - Content: GameEvent *__fastcall FieldEventProvider_NoGrid(GameSystem *gsys, Field *field)
+      - Content: GameEvent *__fastcall FieldEventProvider_Hybrid(GameSystem *gsys, Field *field)
+      - Content: GameEvent *__fastcall FieldEventProvider_Grid_CheckForEvent(GameSystem *gsys, Field *field, b32 *pCancelPhenomenon, b32 *pKeepCatwalkState)
+      - Content: GameEvent *__fastcall FieldEventProvider_NoGrid_CheckForEvent(GameSystem *gsys, Field *field)
+    Enums:
+      - Definition:
+          CPPName: "field::EventCheckFlag"
+          Content: "enum FieldInteractFlag\n{\n  FLD_INTERACT_KEY_A_DOWN = 0x1,\n  FLD_INTERACT_KEY_X_DOWN = 0x2,\n  FLD_INTERACT_PLAYER_STEP_MARK = 0x4,\n  FLD_INTERACT_PLAYER_STEP_BEGIN = 0x8,\n  FLD_INTERACT_PLAYER_ACT_FINISHED = 0x10,\n  FLD_INTERACT_PLAYER_MOVE_TURNING = 0x20,\n  FLD_INTERACT_KEY_IN_MOVE_DIR = 0x40,\n  FLD_INTERACT_KEY_Y_DOWN = 0x80,\n  FLD_INTERACT_KEY_AXY_DOWN = 0x100,\n  FLD_INTERACT_PLAYER_MOVE_VERTICAL_ONLY = 0x400,\n  FLD_INTERACT_PLAYER_MOVE_NONE = 0x800,\n};\n"
+        DefineFlagOps: true
+    Structures:
+      - Definition:
+          CPPName: "field::EventCheckData"
+          Content: "struct FieldEventCheckData\n{\n  u32 FieldmapHeapID;\n  GameSystem *m_GameSys;\n  GameData *m_GameData;\n  EventDataSystem *Entities;\n  u16 ZoneID;\n  Field *Fieldmap;\n  FieldPlayer *Player;\n  PlayerActionStatus m_PlayerActionStatus;\n  PlayerMoveStatus m_PlayerMoveStatus;\n  u16 PlayerDirection;\n  u16 ReserveSCRID;\n  u32 NewPressedKeys;\n  u32 HeldKeys;\n  u16 InputPlayerMoveDir;\n  VecFx32 *PlayerPos;\n  TileType TileUnderPlayer;\n  FieldInteractFlag Flags;\n};\n"
         Methods:
   - Path: field/field_eventdata.h
     Includes:
@@ -4386,7 +4412,7 @@ SourceFiles:
       - system/gamesystem.h
     Typedefs:
       - CPPName: "gsys::EventCallback"
-        Content: "typedef int (*GameEventCallback)(GameEvent *, int *, void *);\n"
+        Content: typedef GameEventReturnCode (*GameEventCallback)(GameEvent*, u32*, void*);
     GVars:
     Functions:
       - Content: GameEvent* GameEvent_Create(GameSystem *gsys, GameEvent *parentEvent, GameEventCallback callback, u32 evtDataSize)
@@ -4434,6 +4460,12 @@ SourceFiles:
           - CPPName: ChainNext
             CName: GameEvent_ChainNext
             IsStatic: false
+          - CPPName: Create
+            CName: GameEvent_Create
+            IsStatic: true
+          - CPPName: CreateOverlayDelegate
+            CName: GameEvent_CreateOverlayDelegate
+            IsStatic: true
   - Path: system/game_input.h
     Includes:
       - nds/hid.h

@@ -4,7 +4,6 @@
 #include "swantypes.h"
 #include "swan_cpp_enum_ops.h"
 
-ENUM_DECLARE(_HeapID)
 
 enum _HeapID
 {
