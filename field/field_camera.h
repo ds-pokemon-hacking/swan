@@ -32,6 +32,7 @@ enum FieldCameraTransformType
 #include "field/field_camera.h"
 #include "gfl/fs/gfl_archive.h"
 #include "gfl/g3d/gfl_g3d_camera.h"
+#include "math/angle.h"
 
 struct FieldEvCameraAnimationCoords
 {
@@ -102,7 +103,7 @@ struct CameraDelayManager
 
 struct FieldCamera
 {
-    u16 HeapID;
+    HeapID m_HeapID;
     u16 _PaddingHeapID;
     ArcTool* DefaultCamArc;
     ArcTool* CameraBoundaryArc;

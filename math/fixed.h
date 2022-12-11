@@ -21,6 +21,10 @@ extern void    fx_div_req(fx32 numerator, fx32 denominator);
 extern fx32    fx_recip(fx32 value);
 extern void    fx_recip_req(fx32 denominator);
 extern fx32    fx_div_get_result();
+extern fx32    fx_sqrt(fx32 num);
+extern fx32    fx_invSqrt(fx32 num);
+extern void    fx_sqrt_req(fx32 num);
+extern fx32    fx_sqrt_get_result();
 
 C_DECL_END
 

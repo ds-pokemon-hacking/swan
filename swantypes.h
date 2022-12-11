@@ -2,6 +2,7 @@
 #define __SWANTYPES_H
 
 #include <stdint.h>
+#include <stddef.h>
 
 #define NELEMS(x) ((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))
 
@@ -59,11 +60,13 @@ typedef int32_t b32; //32-bit bool
 #define C_DECL_END } //extern "C"
 #define SWAN_CPPTYPE(ns, typename) namespace ns { typedef typename typename; }
 #define SWAN_CPPTYPE_EX(ns, cppTypename, typename) namespace ns { typedef typename cppTypename; }
+#define SWAN_CPPONLY(code) code
 #else
 #define C_DECL_BEGIN
 #define C_DECL_END
 #define SWAN_CPPTYPE(ns, typename)
 #define SWAN_CPPTYPE_EX(ns, cppTypename, typename)
+#define SWAN_CPPONLY(code)
 #endif
 
 #endif

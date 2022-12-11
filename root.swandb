@@ -209,6 +209,7 @@ SourceFiles:
       - field/field_camera.h
       - gfl/fs/gfl_archive.h
       - gfl/g3d/gfl_g3d_camera.h
+      - math/angle.h
     Typedefs:
       - Content: "typedef void (*FieldCameraAnimatorFunc)(FieldCamera *fldCam);\n"
     GVars:
@@ -240,7 +241,7 @@ SourceFiles:
           Content: "struct CameraDelayManager\n{\n  u32 DelayMax;\n  u32 ReadIdx;\n  u32 WriteIdx;\n  u32 ReadWriteDelay;\n  b32 DelayReadIsReady;\n  b32 NoDelayX;\n  b32 NoDelayY;\n  b32 NoDelayZ;\n  VecFx32 *TargetVectors;\n  VecFx32 *CamPosVectors;\n  b32 IsRunningDelay;\n  b32 WriteDisabled;\n};\n"
         Methods:
       - Definition:
-          Content: "struct FieldCamera\n{\n  u16 HeapID;\n  u16 _PaddingHeapID;\n  ArcTool *DefaultCamArc;\n  ArcTool *CameraBoundaryArc;\n  G3DCamera *m_G3DCamera;\n  u32 DefaultCameraIdx;\n  FieldCameraTransformType TransformType;\n  VecFx32 *PlayerBaseTranslation;\n  VecFx32 *BaseTranslation;\n  VecFx32 *AbsCamPosPtr;\n  VecFx32 FixedCameraTranslation;\n  VecFx32 CamPosOffset;\n  VecFx32 CalcEyePos;\n  VecFx32 FixedTargetTranslation;\n  VecFx32 CalcTargetPos;\n  VecFx32 TargetPosOffset;\n  VecFx32 TargetPosBase;\n  fxangle Pitch;\n  fxangle Yaw;\n  s32 TZDist;\n  fxangle FOV;\n  u16 AngleTgtEye;\n  u16 field_84;\n  u16 field_86;\n  CameraBoundary CameraBoundaryBuffer[4];\n  u8 CameraBoundaryCount;\n  u8 UseCameraBoundaries;\n  u16 CamBoundIdx;\n  CameraDelayManager *CamDelayManager;\n  FieldEvCameraAnimationHandler Animator;\n  u32 field_1A8;\n  FieldCameraAnimatorFunc AnimatorFunction;\n};"
+          Content: "struct FieldCamera\n{\n  HeapID m_HeapID;\n  u16 _PaddingHeapID;\n  ArcTool *DefaultCamArc;\n  ArcTool *CameraBoundaryArc;\n  G3DCamera *m_G3DCamera;\n  u32 DefaultCameraIdx;\n  FieldCameraTransformType TransformType;\n  VecFx32 *PlayerBaseTranslation;\n  VecFx32 *BaseTranslation;\n  VecFx32 *AbsCamPosPtr;\n  VecFx32 FixedCameraTranslation;\n  VecFx32 CamPosOffset;\n  VecFx32 CalcEyePos;\n  VecFx32 FixedTargetTranslation;\n  VecFx32 CalcTargetPos;\n  VecFx32 TargetPosOffset;\n  VecFx32 TargetPosBase;\n  fxangle Pitch;\n  fxangle Yaw;\n  s32 TZDist;\n  fxangle FOV;\n  u16 AngleTgtEye;\n  u16 field_84;\n  u16 field_86;\n  CameraBoundary CameraBoundaryBuffer[4];\n  u8 CameraBoundaryCount;\n  u8 UseCameraBoundaries;\n  u16 CamBoundIdx;\n  CameraDelayManager *CamDelayManager;\n  FieldEvCameraAnimationHandler Animator;\n  u32 field_1A8;\n  FieldCameraAnimatorFunc AnimatorFunction;\n};"
         Methods:
   - Path: field/field_camera_boundary.h
     Includes:
@@ -1549,6 +1550,8 @@ SourceFiles:
       - Content: void GFL_HeapDumpAllocFailure(HeapID heapId, u32 blockLength)
       - Content: void GFL_HeapDumpOnFailure(HeapID heapId)
       - Content: b32 GFL_HeapDebugCopyFileName(char *dest, char *src)
+      - Content: SWAN_CPPONLY(INLINE void* operator new(size_t size, HeapID heapId) { return GFL_MALLOC(heapId, size); })
+      - Content: SWAN_CPPONLY(INLINE void* operator new[](size_t size, HeapID heapId) { return GFL_MALLOC(heapId, size); })
     Enums:
       - Definition:
           Content: "enum AllocatorState\n{\n  HEAP_OK = 0x0,\n  HEAP_ID_OUT_OF_RANGE = 0x1,\n  HEAP_MISSING_HANDLE = 0x2,\n  HEAP_ALLOC_FAIL = 0x3,\n  HEAP_LIMIT_REACHED = 0x4,\n  HEAP_INIT_FAIL = 0x5,\n};"
@@ -1627,6 +1630,7 @@ SourceFiles:
           - CPPName: Unload
             CName: GFL_OvlUnload
             IsStatic: true
+    Macros: 
   - Path: gfl/core/gfl_proc_helper.h
     Includes:
       - gfl/core/gfl_procsys.h
@@ -3141,6 +3145,10 @@ SourceFiles:
       - Content: fx32 fx_recip(fx32 value)
       - Content: void fx_recip_req(fx32 denominator)
       - Content: fx32 fx_div_get_result()
+      - Content: fx32 __fastcall fx_sqrt(fx32 num)
+      - Content: fx32 __fastcall fx_invSqrt(fx32 num)
+      - Content: void __fastcall fx_sqrt_req(fx32 num)
+      - Content: fx32 __fastcall fx_sqrt_get_result()
     Enums:
     Structures:
     Macros: "#define FX_SCALE_I 4096\n#define FX_SCALE_F 4096.0f\n\n#define FX32_ONE FX_SCALE_I\n\n#define FX32(value) ((fx32)((value) * FX_SCALE_F))"

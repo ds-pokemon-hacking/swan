@@ -7,6 +7,7 @@
 #ifdef __cplusplus
 
 #include <stdint.h>
+#include <stddef.h>
 
 template <size_t S>
 struct _ENUM_FLAG_INTEGER_FOR_SIZE;
