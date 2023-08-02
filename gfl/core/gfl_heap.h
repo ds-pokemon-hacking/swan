@@ -5,10 +5,20 @@
 
 #include <string.h>
 
+#ifdef __FILE_NAME__
+#define GFL_HEAP__FILENAME__ __FILE_NAME__
+#else
 #define GFL_HEAP__FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)
+#endif
 
+#ifdef __cplusplus
+#define GFL_NEW(heapId) new((heapId), GFL_HEAP__FILENAME__, __LINE__)
+#define GFL_DEL(p) GFL_HeapFree(p);
+#define GFL_DESTROY_AND_DEL(dtorType, p) p->~dtorType(); GFL_HeapFree(p);
+#else
 #define GFL_NEW(heapId, type) (type*) GFL_HeapAllocate((heapId), sizeof(type), 0, GFL_HEAP__FILENAME__, __LINE__)
 #define GFL_NEW_ARRAY(heapId, type, count) (type*) GFL_HeapAllocate((heapId), sizeof(type) * (count), 0, GFL_HEAP__FILENAME__, __LINE__)
+#endif
 
 #define GFL_MALLOC(heapId, size) GFL_HeapAllocate((heapId), (size), 0, GFL_HEAP__FILENAME__, __LINE__)
 #define GFL_CALLOC(heapId, size) GFL_HeapAllocate((heapId), (size), 1, GFL_HEAP__FILENAME__, __LINE__)
@@ -75,8 +85,8 @@ extern void                        GFL_HeapDeleteCleanCheck(HeapID heapId);
 extern void                        GFL_HeapDumpAllocFailure(HeapID heapId, u32 blockLength);
 extern void                        GFL_HeapDumpOnFailure(HeapID heapId);
 extern b32                         GFL_HeapDebugCopyFileName(char* dest, char* src);
-SWAN_CPPONLY(INLINE void*          operator new(size_t size, HeapID heapId) { return GFL_MALLOC(heapId, size); });
-SWAN_CPPONLY(INLINE void*          operator new[](size_t size, HeapID heapId) { return GFL_MALLOC(heapId, size); });
+SWAN_CPPONLY(INLINE void*          operator new(size_t size, HeapID heapId, const char* file, unsigned int line) { return GFL_HeapAllocate(heapId, size, 0, file, line); });
+SWAN_CPPONLY(INLINE void*          operator new[](size_t size, HeapID heapId, const char* file, unsigned int line) { return GFL_HeapAllocate(heapId, size, 0, file, line); });
 
 C_DECL_END
 

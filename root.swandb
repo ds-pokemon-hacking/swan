@@ -1550,8 +1550,8 @@ SourceFiles:
       - Content: void GFL_HeapDumpAllocFailure(HeapID heapId, u32 blockLength)
       - Content: void GFL_HeapDumpOnFailure(HeapID heapId)
       - Content: b32 GFL_HeapDebugCopyFileName(char *dest, char *src)
-      - Content: SWAN_CPPONLY(INLINE void* operator new(size_t size, HeapID heapId) { return GFL_MALLOC(heapId, size); })
-      - Content: SWAN_CPPONLY(INLINE void* operator new[](size_t size, HeapID heapId) { return GFL_MALLOC(heapId, size); })
+      - Content: SWAN_CPPONLY(INLINE void* operator new(size_t size, HeapID heapId, const char* file, unsigned int line) { return GFL_HeapAllocate(heapId, size, 0, file, line); })
+      - Content: SWAN_CPPONLY(INLINE void* operator new[](size_t size, HeapID heapId, const char* file, unsigned int line) { return GFL_HeapAllocate(heapId, size, 0, file, line); })
     Enums:
       - Definition:
           Content: "enum AllocatorState\n{\n  HEAP_OK = 0x0,\n  HEAP_ID_OUT_OF_RANGE = 0x1,\n  HEAP_MISSING_HANDLE = 0x2,\n  HEAP_ALLOC_FAIL = 0x3,\n  HEAP_LIMIT_REACHED = 0x4,\n  HEAP_INIT_FAIL = 0x5,\n};"
@@ -1572,7 +1572,7 @@ SourceFiles:
       - Definition:
           Content: "struct GFLHeapManager\n{\n  HeapHandle *HeapHandles;\n  u8 *HeapHandleIndices;\n  u16 SubHeapCount;\n  u16 MainHeapCount;\n  u16 MaxConcurrentSubHandles;\n  u16 ResultCode;\n};"
         Methods:
-    Macros: "#include <string.h>\n\n#define GFL_HEAP__FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)\n\n#define GFL_NEW(heapId, type) (type*) GFL_HeapAllocate((heapId), sizeof(type), 0, GFL_HEAP__FILENAME__, __LINE__)\n#define GFL_NEW_ARRAY(heapId, type, count) (type*) GFL_HeapAllocate((heapId), sizeof(type) * (count), 0, GFL_HEAP__FILENAME__, __LINE__)\n\n#define GFL_MALLOC(heapId, size) GFL_HeapAllocate((heapId), (size), 0, GFL_HEAP__FILENAME__, __LINE__)\n#define GFL_CALLOC(heapId, size) GFL_HeapAllocate((heapId), (size), 1, GFL_HEAP__FILENAME__, __LINE__)\n#define GFL_FREE(ptr) GFL_HeapFree((ptr))"
+    Macros: "#include <string.h>\n\n#if __GNUC__ >= 12\n#define GFL_HEAP__FILENAME__ __FILE_NAME__\n#else\n#define GFL_HEAP__FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)\n#endif\n\n#ifdef __cplusplus\n#define GFL_NEW(heapId) new((heapId), GFL_HEAP__FILENAME__, __LINE__)\n#define GFL_DEL(p) GFL_HeapFree(p);\n#define GFL_DESTROY_AND_DEL(dtorType, p) p->~dtorType(); GFL_HeapFree(p);\n#else\n#define GFL_NEW(heapId, type) (type*) GFL_HeapAllocate((heapId), sizeof(type), 0, GFL_HEAP__FILENAME__, __LINE__)\n#define GFL_NEW_ARRAY(heapId, type, count) (type*) GFL_HeapAllocate((heapId), sizeof(type) * (count), 0, GFL_HEAP__FILENAME__, __LINE__)\n#endif\n\n#define GFL_MALLOC(heapId, size) GFL_HeapAllocate((heapId), (size), 0, GFL_HEAP__FILENAME__, __LINE__)\n#define GFL_CALLOC(heapId, size) GFL_HeapAllocate((heapId), (size), 1, GFL_HEAP__FILENAME__, __LINE__)\n#define GFL_FREE(ptr) GFL_HeapFree((ptr))"
   - Path: gfl/core/gfl_overlay.h
     Includes:
       - gfl/core/gfl_heap.h
@@ -1630,7 +1630,6 @@ SourceFiles:
           - CPPName: Unload
             CName: GFL_OvlUnload
             IsStatic: true
-    Macros: 
   - Path: gfl/core/gfl_proc_helper.h
     Includes:
       - gfl/core/gfl_procsys.h
