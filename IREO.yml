@@ -2638,4 +2638,18 @@ Symbols:
   - Name: STD_PALETTE_BG_B
     Segment: 0x1
     Address: 0x5000400
-
+  - Name: GetUserMemRegionDefaultStart
+    Segment: 0x0
+    Address: 0x207B375
+  - Name: main
+    Segment: 0x0
+    Address: 0x02005125
+  - Name: GFLAppInit
+    Segment: 0x0
+    Address: 0x020054B9
+  - Name: os_MemRegionStarts
+    Segment: 0x0
+    Address: 0x2fffda0
+  - Name: os_MemRegionEnds
+    Segment: 0x0
+    Address: 0x2fffdc4
