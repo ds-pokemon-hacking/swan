@@ -1,0 +1,2748 @@
+Segments:
+  - ID: 0x0
+    Name: ARM9
+    Type: EXECUTABLE
+- ID: 0x1
+  Name: STATIC_RAM
+  Type: null
+- ID: 0x2
+  Name: ITCM
+  Type: null
+- ID: 0x3
+  Name: SHARED_WORK
+  Type: null
+- ID: 0x4
+  Name: OVL_12
+  Type: OVERLAY
+- ID: 0x5
+  Name: OVL_10
+  Type: OVERLAY
+- ID: 0x6
+  Name: OVL_27
+  Type: OVERLAY
+- ID: 0x7
+  Name: OVL_35
+  Type: OVERLAY
+- ID: 0x8
+  Name: OVL_36
+  Type: OVERLAY
+- ID: 0x9
+  Name: OVL_66
+  Type: OVERLAY
+- ID: 0xa
+  Name: OVL_76
+  Type: OVERLAY
+- ID: 0xb
+  Name: ARM9_DATA
+  Type: null
+- ID: 0xc
+  Name: OVL_279
+  Type: OVERLAY
+- ID: 0xd
+  Name: ARM9_BSS
+  Type: null
+- ID: 0xe
+  Name: OVL_33
+  Type: OVERLAY
+- ID: 0xf
+  Name: OVL_104
+  Type: OVERLAY
+- ID: 0x10
+  Name: OVL_146
+  Type: OVERLAY
+- ID: 0x11
+  Name: OVL_147
+  Type: OVERLAY
+- ID: 0x12
+  Name: OVL_12_BSS
+  Type: OVERLAY
+- ID: 0x13
+  Name: OVL_36_BSS
+  Type: OVERLAY
+- ID: 0x14
+  Name: SYSTEM
+  Type: null
+- ID: 0x15
+  Name: ARM9_IOREG
+  Type: null
+- ID: 0x16
+  Name: STD_PALETTE
+  Type: null
+- ID: 0x17
+  Name: VRAM_LCDC
+  Type: null
+- ID: 0x18
+  Name: OVL_299
+  Type: OVERLAY
+- ID: 0x19
+  Name: OVL_302
+  Type: OVERLAY
+- ID: 0x1a
+  Name: OVL_255
+  Type: OVERLAY
+- ID: 0x1b
+  Name: OVL_207
+  Type: OVERLAY
+- ID: 0x1c
+  Name: OVL_165
+  Type: OVERLAY
+- ID: 0x1d
+  Name: OVL_167
+  Type: OVERLAY
+- ID: 0x1e
+  Name: OVL_168
+  Type: OVERLAY
+- ID: 0x1f
+  Name: OVL_169
+  Type: OVERLAY
+- ID: 0x20
+  Name: OVL_170
+  Type: OVERLAY
+
+Symbols:
+  - Name: sys_uncomp_blz
+    Segment: 0x0
+    Address: 0x2004df4
+  - Name: nullsub_91
+    Segment: 0x0
+    Address: 0x2004ea8
+  - Name: nullsub_92
+    Segment: 0x0
+    Address: 0x2004eac
+  - Name: nullsub_94
+    Segment: 0x0
+    Address: 0x2004eb0
+  - Name: aSdkNintendoDwc
+    Segment: 0x0
+    Address: 0x2005050
+  - Name: aSdkNintendoBac
+    Segment: 0x0
+    Address: 0x2005094
+  - Name: aSdkUbiquitousC
+    Segment: 0x0
+    Address: 0x20050ac
+  - Name: aSdkNintendoWif
+    Segment: 0x0
+    Address: 0x20050c4
+  - Name: aSdkUbiquitousS
+    Segment: 0x0
+    Address: 0x20050f0
+  - Name: aSdkNintendoLib
+    Segment: 0x0
+    Address: 0x2005108
+  - Name: nullsub_95
+    Segment: 0x0
+    Address: 0x2005669
+  - Name: GFL_VBlankTCBAdd
+    Segment: 0x0
+    Address: 0x20056fd
+  - Name: nullsub_101
+    Segment: 0x0
+    Address: 0x200703d
+  - Name: j_GFL_HeapFree
+    Segment: 0x0
+    Address: 0x2007d85
+  - Name: j_GFL_HeapFree_0
+    Segment: 0x0
+    Address: 0x2007de9
+  - Name: nullsub_96
+    Segment: 0x0
+    Address: 0x2008b95
+  - Name: nullsub_102
+    Segment: 0x0
+    Address: 0x2008ef1
+  - Name: nullsub_103
+    Segment: 0x0
+    Address: 0x20091a9
+  - Name: nullsub_104
+    Segment: 0x0
+    Address: 0x2009e69
+  - Name: nullsub_105
+    Segment: 0x0
+    Address: 0x2009f7d
+  - Name: nullsub_106
+    Segment: 0x0
+    Address: 0x200ad5d
+  - Name: nullsub_107
+    Segment: 0x0
+    Address: 0x200b4d1
+  - Name: nullsub_108
+    Segment: 0x0
+    Address: 0x200b531
+  - Name: j_GFL_HeapFree_1
+    Segment: 0x0
+    Address: 0x200bb5d
+  - Name: nullsub_110
+    Segment: 0x0
+    Address: 0x200cc9d
+  - Name: nullsub_111
+    Segment: 0x0
+    Address: 0x200ce59
+  - Name: j_GFL_HeapFree_2
+    Segment: 0x0
+    Address: 0x200de61
+  - Name: nullsub_112
+    Segment: 0x0
+    Address: 0x200e359
+  - Name: nullsub_113
+    Segment: 0x0
+    Address: 0x200f181
+  - Name: nullsub_114
+    Segment: 0x0
+    Address: 0x200f2d9
+  - Name: nullsub_97
+    Segment: 0x0
+    Address: 0x2010051
+  - Name: nullsub_115
+    Segment: 0x0
+    Address: 0x201046d
+  - Name: j_GFL_HeapFree_3
+    Segment: 0x0
+    Address: 0x2011529
+  - Name: nullsub_116
+    Segment: 0x0
+    Address: 0x2012edd
+  - Name: j_GFL_HeapFree_4
+    Segment: 0x0
+    Address: 0x2012f8d
+  - Name: j_GFL_HeapFree_5
+    Segment: 0x0
+    Address: 0x201362d
+  - Name: j_GFL_HeapFree_6
+    Segment: 0x0
+    Address: 0x20158f9
+  - Name: nullsub_118
+    Segment: 0x0
+    Address: 0x20166d1
+  - Name: j_GFL_HeapFree_7
+    Segment: 0x0
+    Address: 0x2018f11
+  - Name: j_GFL_HeapFree_8
+    Segment: 0x0
+    Address: 0x201930d
+  - Name: nullsub_119
+    Segment: 0x0
+    Address: 0x201d621
+  - Name: nullsub_109
+    Segment: 0x0
+    Address: 0x201d625
+  - Name: j_GFL_HeapFree_9
+    Segment: 0x0
+    Address: 0x20202a5
+  - Name: j_GFL_HeapFree_10
+    Segment: 0x0
+    Address: 0x2021a19
+  - Name: nullsub_120
+    Segment: 0x0
+    Address: 0x2023071
+  - Name: j_GFL_HeapFree_11
+    Segment: 0x0
+    Address: 0x2026de9
+  - Name: nullsub_122
+    Segment: 0x0
+    Address: 0x2027f15
+  - Name: nullsub_123
+    Segment: 0x0
+    Address: 0x20293d1
+  - Name: j_GFL_HeapFree_12
+    Segment: 0x0
+    Address: 0x2029a21
+  - Name: j_GFL_HeapFree_13
+    Segment: 0x0
+    Address: 0x202ac7d
+  - Name: j_GFL_HeapFreeCore
+    Segment: 0x0
+    Address: 0x202b695
+  - Name: nullsub_124
+    Segment: 0x0
+    Address: 0x202d7a9
+  - Name: nullsub_125
+    Segment: 0x0
+    Address: 0x202d7dd
+  - Name: j_GFL_HeapFree_14
+    Segment: 0x0
+    Address: 0x202ea09
+  - Name: nullsub_126
+    Segment: 0x0
+    Address: 0x202f3ad
+  - Name: nullsub_127
+    Segment: 0x0
+    Address: 0x202f3b1
+  - Name: nullsub_128
+    Segment: 0x0
+    Address: 0x202f3b5
+  - Name: nullsub_129
+    Segment: 0x0
+    Address: 0x202f3b9
+  - Name: nullsub_130
+    Segment: 0x0
+    Address: 0x202f3bd
+  - Name: nullsub_131
+    Segment: 0x0
+    Address: 0x202f3f1
+  - Name: nullsub_132
+    Segment: 0x0
+    Address: 0x202f3f5
+  - Name: nullsub_133
+    Segment: 0x0
+    Address: 0x202f3f9
+  - Name: nullsub_134
+    Segment: 0x0
+    Address: 0x202f3fd
+  - Name: nullsub_135
+    Segment: 0x0
+    Address: 0x202f401
+  - Name: nullsub_136
+    Segment: 0x0
+    Address: 0x202f405
+  - Name: nullsub_137
+    Segment: 0x0
+    Address: 0x202f409
+  - Name: nullsub_138
+    Segment: 0x0
+    Address: 0x202f40d
+  - Name: j_GFL_HeapFree_15
+    Segment: 0x0
+    Address: 0x20301f5
+  - Name: j_GFL_HeapFree_16
+    Segment: 0x0
+    Address: 0x2031305
+  - Name: j_GFL_HeapFree_17
+    Segment: 0x0
+    Address: 0x20315c9
+  - Name: nullsub_139
+    Segment: 0x0
+    Address: 0x2031b95
+  - Name: j_GFL_HeapFree_18
+    Segment: 0x0
+    Address: 0x20325bd
+  - Name: j_GFL_HeapFree_19
+    Segment: 0x0
+    Address: 0x20329cd
+  - Name: j_j_GFL_HeapFree_20
+    Segment: 0x0
+    Address: 0x2032c49
+  - Name: j_GFL_HeapFree_20
+    Segment: 0x0
+    Address: 0x2032cad
+  - Name: nullsub_140
+    Segment: 0x0
+    Address: 0x2032d31
+  - Name: nullsub_141
+    Segment: 0x0
+    Address: 0x2032d35
+  - Name: nullsub_142
+    Segment: 0x0
+    Address: 0x2033721
+  - Name: j_GFL_HeapFree_21
+    Segment: 0x0
+    Address: 0x2034eb5
+  - Name: j_nullsub_96
+    Segment: 0x0
+    Address: 0x2035015
+  - Name: j_hw_isDSi
+    Segment: 0x0
+    Address: 0x20352e1
+  - Name: j_GFL_HeapFree_22
+    Segment: 0x0
+    Address: 0x2036db9
+  - Name: j_GFL_HeapFree_23
+    Segment: 0x0
+    Address: 0x2037931
+  - Name: j_GFL_HeapFree_24
+    Segment: 0x0
+    Address: 0x2037a69
+  - Name: j_GFL_HeapFree_25
+    Segment: 0x0
+    Address: 0x2037ff5
+  - Name: j_GFL_HeapFree_26
+    Segment: 0x0
+    Address: 0x20384cd
+  - Name: j_GFL_HeapFree_27
+    Segment: 0x0
+    Address: 0x2039891
+  - Name: GFL_HeapAddChild
+    Segment: 0x0
+    Address: 0x2039bdd
+  - Name: GFL_HeapAllocateCore
+    Segment: 0x0
+    Address: 0x2039d9d
+  - Name: GFL_HeapFreeCore
+    Segment: 0x0
+    Address: 0x2039e2d
+  - Name: GFL_HeapResizeCore
+    Segment: 0x0
+    Address: 0x2039ef9
+  - Name: GFL_HeapGetFreeSizeCore
+    Segment: 0x0
+    Address: 0x2039f61
+  - Name: GFL_HeapStatusCheck
+    Segment: 0x0
+    Address: 0x203a065
+  - Name: GFL_HeapGetLastResult
+    Segment: 0x0
+    Address: 0x203a099
+  - Name: GFL_HeapCreateChild
+    Segment: 0x0
+    Address: 0x203a15d
+  - Name: GFL_HeapCreateRoot
+    Segment: 0x0
+    Address: 0x203a179
+  - Name: GFL_HeapHandleAllocResult
+    Segment: 0x0
+    Address: 0x203a195
+  - Name: GFL_HeapDelete
+    Segment: 0x0
+    Address: 0x203a1d1
+  - Name: GFL_HeapAllocate
+    Segment: 0x0
+    Address: 0x203a1fd
+  - Name: GFL_HeapFree
+    Segment: 0x0
+    Address: 0x203a24d
+  - Name: GFL_HeapResize
+    Segment: 0x0
+    Address: 0x203a26d
+  - Name: jpt_203A288
+    Segment: 0x0
+    Address: 0x203a28b
+  - Name: def_203A288
+    Segment: 0x0
+    Address: 0x203a2a7
+  - Name: GFL_HeapGetFreeSize
+    Segment: 0x0
+    Address: 0x203a2a9
+  - Name: GFL_HeapStatusValidate
+    Segment: 0x0
+    Address: 0x203a2bd
+  - Name: GFL_HeapSetBlockDebugInfo
+    Segment: 0x0
+    Address: 0x203a2e1
+  - Name: GFL_HeapDumpAllocFailure
+    Segment: 0x0
+    Address: 0x203a355
+  - Name: GFL_HeapDebugTraceAlloc
+    Segment: 0x0
+    Address: 0x203a3cd
+  - Name: GFL_HeapDebugTraceFree
+    Segment: 0x0
+    Address: 0x203a3e9
+  - Name: nullsub_143
+    Segment: 0x0
+    Address: 0x203a611
+  - Name: GFL_TCBMgrAddTask
+    Segment: 0x0
+    Address: 0x203a615
+  - Name: GCTX_ProcMgrQueueProc
+    Segment: 0x0
+    Address: 0x203a939
+  - Name: GCTX_ProcMgrReplaceProc
+    Segment: 0x0
+    Address: 0x203a955
+  - Name: j_GFL_HeapFree_28
+    Segment: 0x0
+    Address: 0x203aae5
+  - Name: GFL_ProcInitSubsystem
+    Segment: 0x0
+    Address: 0x203ab11
+  - Name: GFL_ProcReleaseSubsystem
+    Segment: 0x0
+    Address: 0x203ab21
+  - Name: j_GFL_HeapFree_29
+    Segment: 0x0
+    Address: 0x203c449
+  - Name: nullsub_121
+    Segment: 0x0
+    Address: 0x203c9ed
+  - Name: GFL_DebugAssertFail
+    Segment: 0x0
+    Address: 0x203cb81
+  - Name: GFL_DebugPrintOutputMessage
+    Segment: 0x0
+    Address: 0x203cca5
+  - Name: GFL_OvlEntryUnload
+    Segment: 0x0
+    Address: 0x203cdb5
+  - Name: GFL_OvlUnload
+    Segment: 0x0
+    Address: 0x203cdc9
+  - Name: GFL_OvlLoad
+    Segment: 0x0
+    Address: 0x203ce0d
+  - Name: GFL_OvlCheckMemoryCollision
+    Segment: 0x0
+    Address: 0x203cea5
+  - Name: GFL_OvlGetList
+    Segment: 0x0
+    Address: 0x203cf3d
+  - Name: GFL_OvlGetListCount
+    Segment: 0x0
+    Address: 0x203cf65
+  - Name: GFL_OvlGetMemoryRegion
+    Segment: 0x0
+    Address: 0x203cf95
+  - Name: GFL_HIDUpdate
+    Segment: 0x0
+    Address: 0x203d09d
+  - Name: GCTX_HIDUpdate
+    Segment: 0x0
+    Address: 0x203d0ed
+  - Name: GFL_HIDGetKeypadManager
+    Segment: 0x0
+    Address: 0x203d2d5
+  - Name: GCTX_HIDGetInstance
+    Segment: 0x0
+    Address: 0x203d2d9
+  - Name: setTempSpaceToKeyBlock
+    Segment: 0x0
+    Address: 0x203dec9
+  - Name: GFL_HIDGetPressedKeys
+    Segment: 0x0
+    Address: 0x203dee5
+  - Name: GCTX_HIDGetPressedKeys
+    Segment: 0x0
+    Address: 0x203defd
+  - Name: GFL_HIDGetHeldKeys
+    Segment: 0x0
+    Address: 0x203df09
+  - Name: GCTX_HIDGetHeldKeys
+    Segment: 0x0
+    Address: 0x203df21
+  - Name: GFL_HIDGetTypedKeys
+    Segment: 0x0
+    Address: 0x203df2d
+  - Name: GCTX_HIDGetTypedKeys
+    Segment: 0x0
+    Address: 0x203df45
+  - Name: nullsub_98
+    Segment: 0x0
+    Address: 0x203e151
+  - Name: nullsub_144
+    Segment: 0x0
+    Address: 0x2040e0d
+  - Name: nullsub_145
+    Segment: 0x0
+    Address: 0x20412d1
+  - Name: nullsub_146
+    Segment: 0x0
+    Address: 0x20413c5
+  - Name: nullsub_147
+    Segment: 0x0
+    Address: 0x2041441
+  - Name: nullsub_148
+    Segment: 0x0
+    Address: 0x2041445
+  - Name: nullsub_149
+    Segment: 0x0
+    Address: 0x2041df9
+  - Name: nullsub_150
+    Segment: 0x0
+    Address: 0x2041e31
+  - Name: nullsub_151
+    Segment: 0x0
+    Address: 0x2041e35
+  - Name: nullsub_152
+    Segment: 0x0
+    Address: 0x2041e39
+  - Name: nullsub_99
+    Segment: 0x0
+    Address: 0x2042451
+  - Name: nullsub_153
+    Segment: 0x0
+    Address: 0x2043ed3
+  - Name: GFL_BGSysSetLCDConfig
+    Segment: 0x0
+    Address: 0x2044711
+  - Name: GFL_BGSysSetBGPriority
+    Segment: 0x0
+    Address: 0x2044bd9
+  - Name: GFL_BGSysSetVRAMBanks
+    Segment: 0x0
+    Address: 0x2046c41
+  - Name: GFL_BGSysSetEnabledBGsA
+    Segment: 0x0
+    Address: 0x2046d39
+  - Name: GFL_BGSysSetEnabledBGsB
+    Segment: 0x0
+    Address: 0x2046dc1
+  - Name: GFL_BGSysSetDisplayLayout
+    Segment: 0x0
+    Address: 0x2046df9
+  - Name: GFL_BitmapWrapVRAM
+    Segment: 0x0
+    Address: 0x2046ea9
+  - Name: GFL_BitmapFill
+    Segment: 0x0
+    Address: 0x204713d
+  - Name: GFL_SystemFontUnpackBits
+    Segment: 0x0
+    Address: 0x2048c95
+  - Name: j_GFL_HeapFree_30
+    Segment: 0x0
+    Address: 0x204a631
+  - Name: j_GFL_HeapFree_31
+    Segment: 0x0
+    Address: 0x204a73d
+  - Name: j_GFL_HeapFree_32
+    Segment: 0x0
+    Address: 0x204d985
+  - Name: j_GFL_HeapFree_33
+    Segment: 0x0
+    Address: 0x204dbed
+  - Name: j_GFL_HeapFree_34
+    Segment: 0x0
+    Address: 0x204dc61
+  - Name: GFL_TextPrintInit
+    Segment: 0x0
+    Address: 0x204dca5
+  - Name: GFL_TextPrintASCIIToIndex
+    Segment: 0x0
+    Address: 0x204de69
+  - Name: GFL_FadeSet
+    Segment: 0x0
+    Address: 0x204e061
+  - Name: def_205161C
+    Segment: 0x0
+    Address: 0x205165c
+  - Name: def_20516E0
+    Segment: 0x0
+    Address: 0x2051720
+  - Name: nullsub_154
+    Segment: 0x0
+    Address: 0x20522a4
+  - Name: def_2055010
+    Segment: 0x0
+    Address: 0x205571c
+  - Name: nullsub_155
+    Segment: 0x0
+    Address: 0x205646c
+  - Name: def_20597E8
+    Segment: 0x0
+    Address: 0x2059868
+  - Name: def_2059D58
+    Segment: 0x0
+    Address: 0x2059ef0
+  - Name: def_205AE7C
+    Segment: 0x0
+    Address: 0x205af20
+  - Name: def_205AFBC
+    Segment: 0x0
+    Address: 0x205b028
+  - Name: def_205B6F4
+    Segment: 0x0
+    Address: 0x205b72c
+  - Name: def_205BF30
+    Segment: 0x0
+    Address: 0x205c1a8
+  - Name: def_205C2C0
+    Segment: 0x0
+    Address: 0x205c374
+  - Name: def_205D620
+    Segment: 0x0
+    Address: 0x205d6c4
+  - Name: def_205DE38
+    Segment: 0x0
+    Address: 0x205ded0
+  - Name: nullsub_156
+    Segment: 0x0
+    Address: 0x205f391
+  - Name: nullsub_157
+    Segment: 0x0
+    Address: 0x206a5a4
+  - Name: sndEnableChannels
+    Segment: 0x0
+    Address: 0x206ba75
+  - Name: sndLockChannel
+    Segment: 0x0
+    Address: 0x206bb1d
+  - Name: sndPlaySamples
+    Segment: 0x0
+    Address: 0x206bb59
+  - Name: sndStopChannel
+    Segment: 0x0
+    Address: 0x206bc1d
+  - Name: nullsub_158
+    Segment: 0x0
+    Address: 0x206eca5
+  - Name: nullsub_159
+    Segment: 0x0
+    Address: 0x206ecbd
+  - Name: fs_call_syscmd
+    Segment: 0x0
+    Address: 0x2070555
+  - Name: fs_normalize_path
+    Segment: 0x0
+    Address: 0x2070735
+  - Name: finit
+    Segment: 0x0
+    Address: 0x2070c7d
+  - Name: romfs_fopen_id
+    Segment: 0x0
+    Address: 0x2070d39
+  - Name: romfs_fclose
+    Segment: 0x0
+    Address: 0x2070db5
+  - Name: romfs_fgetsize
+    Segment: 0x0
+    Address: 0x2070dc1
+  - Name: romfs_ftell
+    Segment: 0x0
+    Address: 0x2070df5
+  - Name: romfs_fseek
+    Segment: 0x0
+    Address: 0x2070e29
+  - Name: romfs_fread
+    Segment: 0x0
+    Address: 0x2070e41
+  - Name: j_romfs_fgetsize
+    Segment: 0x0
+    Address: 0x2070ead
+  - Name: romfs_fopen
+    Segment: 0x0
+    Address: 0x2070eb5
+  - Name: sys_get_overlay_size
+    Segment: 0x0
+    Address: 0x2070f05
+  - Name: sys_prepare_overlay_area
+    Segment: 0x0
+    Address: 0x2070f19
+  - Name: sys_get_overlay_file_id
+    Segment: 0x0
+    Address: 0x2070f41
+  - Name: sys_read_overlay_header
+    Segment: 0x0
+    Address: 0x2070f59
+  - Name: sys_mount_overlay
+    Segment: 0x0
+    Address: 0x2071059
+  - Name: sys_unmount_overlay
+    Segment: 0x0
+    Address: 0x20712a5
+  - Name: sys_load_overlay
+    Segment: 0x0
+    Address: 0x20712b1
+  - Name: sys_unload_overlay
+    Segment: 0x0
+    Address: 0x20712e1
+  - Name: fs_call_filecmd
+    Segment: 0x0
+    Address: 0x20718ad
+  - Name: fs_set_dma_id
+    Segment: 0x0
+    Address: 0x2072325
+  - Name: MAT2_Identity
+    Segment: 0x0
+    Address: 0x20723b8
+  - Name: nullsub_100
+    Segment: 0x0
+    Address: 0x2074659
+  - Name: gfxSetBGModeB
+    Segment: 0x0
+    Address: 0x207495d
+  - Name: gfxRegSetMasterBrightness
+    Segment: 0x0
+    Address: 0x2074971
+  - Name: gfxRegSetBGTransform
+    Segment: 0x0
+    Address: 0x20749cc
+  - Name: gfxGetScreenAddrBG0B
+    Segment: 0x0
+    Address: 0x207512d
+  - Name: gfxGetScreenAddrBG1B
+    Segment: 0x0
+    Address: 0x2075175
+  - Name: gfxGetScreenAddrBG2A
+    Segment: 0x0
+    Address: 0x2075190
+  - Name: def_20751BC
+    Segment: 0x0
+    Address: 0x207520c
+  - Name: gfxGetScreenAddrBG3A
+    Segment: 0x0
+    Address: 0x2075278
+  - Name: def_20752A4
+    Segment: 0x0
+    Address: 0x20752f4
+  - Name: gfxGetCharAddrBG0B
+    Segment: 0x0
+    Address: 0x20753a1
+  - Name: gfxGetCharAddrBG1B
+    Segment: 0x0
+    Address: 0x20753c9
+  - Name: gfxSetBGBanksB
+    Segment: 0x0
+    Address: 0x2076add
+  - Name: gfxAcquireBGBanksA
+    Segment: 0x0
+    Address: 0x2076c41
+  - Name: gfxAcquireObjBanksA
+    Segment: 0x0
+    Address: 0x2076c51
+  - Name: gfxAcquireBGExtPltBanksA
+    Segment: 0x0
+    Address: 0x2076c61
+  - Name: gfxAcquireObjExtPltBanksA
+    Segment: 0x0
+    Address: 0x2076c81
+  - Name: gfxAcquireTextureBanks
+    Segment: 0x0
+    Address: 0x2076ca1
+  - Name: gfxAcquirePaletteBanks
+    Segment: 0x0
+    Address: 0x2076cb1
+  - Name: gfxAcquireBGBanksB
+    Segment: 0x0
+    Address: 0x2076cd1
+  - Name: gfxAcquireObjBanksB
+    Segment: 0x0
+    Address: 0x2076ce1
+  - Name: gfxAcquireBGExtPltBanksB
+    Segment: 0x0
+    Address: 0x2076cf1
+  - Name: gfxAcquireObjExtPltBanksB
+    Segment: 0x0
+    Address: 0x2076d11
+  - Name: sys_memset32
+    Segment: 0x0
+    Address: 0x2078658
+  - Name: sys_memset32_fast
+    Segment: 0x0
+    Address: 0x207869c
+  - Name: sys_memcpy32_fast
+    Segment: 0x0
+    Address: 0x20786e8
+  - Name: irq_waitFor
+    Segment: 0x0
+    Address: 0x2079bb0
+  - Name: nullsub_160
+    Segment: 0x0
+    Address: 0x2079c25
+  - Name: hw_isDSi
+    Segment: 0x0
+    Address: 0x207ac8d
+  - Name: j_hw_isDSi_0
+    Segment: 0x0
+    Address: 0x207acbd
+  - Name: cp15_flushDC
+    Segment: 0x0
+    Address: 0x207b0ac
+  - Name: exceptions_init
+    Segment: 0x0
+    Address: 0x207b895
+  - Name: NativeExceptionHandler
+    Segment: 0x0
+    Address: 0x207b8e0
+  - Name: clock
+    Segment: 0x0
+    Address: 0x207bb0d
+  - Name: CPU_IRQDisable
+    Segment: 0x0
+    Address: 0x207c0e4
+  - Name: CPU_SetIRQMask
+    Segment: 0x0
+    Address: 0x207c0f8
+  - Name: sys_exit
+    Segment: 0x0
+    Address: 0x207c775
+  - Name: j_sys_exit
+    Segment: 0x0
+    Address: 0x2080e59
+  - Name: nullsub_161
+    Segment: 0x0
+    Address: 0x20827f5
+  - Name: nullsub_162
+    Segment: 0x0
+    Address: 0x2082bb4
+  - Name: nullsub_163
+    Segment: 0x0
+    Address: 0x2082bb8
+  - Name: memcpy
+    Segment: 0x0
+    Address: 0x2083964
+  - Name: memmove
+    Segment: 0x0
+    Address: 0x2083984
+  - Name: memset
+    Segment: 0x0
+    Address: 0x20839d0
+  - Name: nullsub_164
+    Segment: 0x0
+    Address: 0x2083a4c
+  - Name: __fill_mem
+    Segment: 0x0
+    Address: 0x2083a50
+  - Name: j_def_2083E3C
+    Segment: 0x0
+    Address: 0x2083e00
+  - Name: j_def_2083E3C_0
+    Segment: 0x0
+    Address: 0x2083e04
+  - Name: j_def_2083E3C_1
+    Segment: 0x0
+    Address: 0x2083e08
+  - Name: def_2083E3C
+    Segment: 0x0
+    Address: 0x2083fe4
+  - Name: __pformatter
+    Segment: 0x0
+    Address: 0x20851fc
+  - Name: def_20857F4
+    Segment: 0x0
+    Address: 0x2085a80
+  - Name: vsnprintf
+    Segment: 0x0
+    Address: 0x2085aec
+  - Name: sprintf
+    Segment: 0x0
+    Address: 0x2085b50
+  - Name: nullsub_165
+    Segment: 0x0
+    Address: 0x2085d98
+  - Name: strlen
+    Segment: 0x0
+    Address: 0x2085d9c
+  - Name: strcpy
+    Segment: 0x0
+    Address: 0x2085db8
+  - Name: strtoul
+    Segment: 0x0
+    Address: 0x20874cc
+  - Name: nullsub_166
+    Segment: 0x0
+    Address: 0x2087c8c
+  - Name: nullsub_167
+    Segment: 0x0
+    Address: 0x2088120
+  - Name: def_2087FE8
+    Segment: 0x0
+    Address: 0x208823c
+  - Name: nullsub_168
+    Segment: 0x0
+    Address: 0x2089180
+  - Name: nullsub_169
+    Segment: 0x0
+    Address: 0x20891cc
+  - Name: nullsub_170
+    Segment: 0x0
+    Address: 0x2089360
+  - Name: __aeabi_uldivmod
+    Segment: 0x0
+    Address: 0x208d5c4
+  - Name: mod64Unsigned
+    Segment: 0x0
+    Address: 0x208d5d0
+  - Name: __aeabi_lmul
+    Segment: 0x0
+    Address: 0x208d60c
+  - Name: __aeabi_idiv
+    Segment: 0x0
+    Address: 0x208d65c
+  - Name: __aeabi_uidiv
+    Segment: 0x0
+    Address: 0x208d868
+  - Name: nullsub_117
+    Segment: 0x0
+    Address: 0x208e37c
+  - Name: nullsub_93
+    Segment: 0x0
+    Address: 0x208ecdc
+  - Name: nullsub_171
+    Segment: 0x0
+    Address: 0x208ed2c
+  - Name: nullsub_172
+    Segment: 0x0
+    Address: 0x208ed30
+  - Name: a1H
+    Segment: 0x0
+    Address: 0x208f8d9
+  - Name: a01
+    Segment: 0x0
+    Address: 0x208fc69
+  - Name: aAbc
+    Segment: 0x0
+    Address: 0x208fcad
+  - Name: aUvwxy
+    Segment: 0x0
+    Address: 0x208fcf1
+  - Name: aQrsvw
+    Segment: 0x0
+    Address: 0x2090081
+  - Name: a01234567890123
+    Segment: 0x0
+    Address: 0x209085d
+  - Name: aAaaaaa
+    Segment: 0x0
+    Address: 0x2090969
+  - Name: aCeeeeiiiidnooo
+    Segment: 0x0
+    Address: 0x209096f
+  - Name: aOuuuuyysaaaaaa
+    Segment: 0x0
+    Address: 0x2090981
+  - Name: aCeeeeiiiidnooo_0
+    Segment: 0x0
+    Address: 0x209098f
+  - Name: aAbcde
+    Segment: 0x0
+    Address: 0x2091a85
+  - Name: a0123
+    Segment: 0x0
+    Address: 0x2091c3d
+  - Name: aSdw
+    Segment: 0x0
+    Address: 0x20940d8
+  - Name: aFreespotninten
+    Segment: 0x0
+    Address: 0x20940e0
+  - Name: aNan_3
+    Segment: 0x0
+    Address: 0x2098e60
+  - Name: aInfinity
+    Segment: 0x0
+    Address: 0x2098e68
+  - Name: aDt
+    Segment: 0x0
+    Address: 0x2099048
+  - Name: aA303
+    Segment: 0x0
+    Address: 0x2099080
+  - Name: aA305
+    Segment: 0x0
+    Address: 0x2099088
+  - Name: aA001
+    Segment: 0x0
+    Address: 0x2099090
+  - Name: aA306
+    Segment: 0x0
+    Address: 0x2099098
+  - Name: aA293
+    Segment: 0x0
+    Address: 0x20990a0
+  - Name: aA304
+    Segment: 0x0
+    Address: 0x20990a8
+  - Name: aA289
+    Segment: 0x0
+    Address: 0x20990b0
+  - Name: aA302
+    Segment: 0x0
+    Address: 0x20990b8
+  - Name: aA297
+    Segment: 0x0
+    Address: 0x20990c0
+  - Name: aA307
+    Segment: 0x0
+    Address: 0x20990c8
+  - Name: aA298
+    Segment: 0x0
+    Address: 0x20990d0
+  - Name: aA281
+    Segment: 0x0
+    Address: 0x20990d8
+  - Name: aA277
+    Segment: 0x0
+    Address: 0x20990e0
+  - Name: aA296
+    Segment: 0x0
+    Address: 0x20990e8
+  - Name: aA295
+    Segment: 0x0
+    Address: 0x20990f0
+  - Name: aA294
+    Segment: 0x0
+    Address: 0x20990f8
+  - Name: aA269
+    Segment: 0x0
+    Address: 0x2099100
+  - Name: aA292
+    Segment: 0x0
+    Address: 0x2099108
+  - Name: aA291
+    Segment: 0x0
+    Address: 0x2099110
+  - Name: aA290
+    Segment: 0x0
+    Address: 0x2099118
+  - Name: aA261
+    Segment: 0x0
+    Address: 0x2099120
+  - Name: aA288
+    Segment: 0x0
+    Address: 0x2099128
+  - Name: aA287
+    Segment: 0x0
+    Address: 0x2099130
+  - Name: aA286
+    Segment: 0x0
+    Address: 0x2099138
+  - Name: aA299
+    Segment: 0x0
+    Address: 0x2099140
+  - Name: aA282
+    Segment: 0x0
+    Address: 0x2099148
+  - Name: aA283
+    Segment: 0x0
+    Address: 0x2099150
+  - Name: aA300
+    Segment: 0x0
+    Address: 0x2099158
+  - Name: aA245
+    Segment: 0x0
+    Address: 0x2099160
+  - Name: aA280
+    Segment: 0x0
+    Address: 0x2099168
+  - Name: aA279
+    Segment: 0x0
+    Address: 0x2099170
+  - Name: aA278
+    Segment: 0x0
+    Address: 0x2099178
+  - Name: aA237
+    Segment: 0x0
+    Address: 0x2099180
+  - Name: aA276
+    Segment: 0x0
+    Address: 0x2099188
+  - Name: aA275
+    Segment: 0x0
+    Address: 0x2099190
+  - Name: aA274
+    Segment: 0x0
+    Address: 0x2099198
+  - Name: aA273
+    Segment: 0x0
+    Address: 0x20991a0
+  - Name: aA272
+    Segment: 0x0
+    Address: 0x20991a8
+  - Name: aA271
+    Segment: 0x0
+    Address: 0x20991b0
+  - Name: aA270
+    Segment: 0x0
+    Address: 0x20991b8
+  - Name: aA221
+    Segment: 0x0
+    Address: 0x20991c0
+  - Name: aA268
+    Segment: 0x0
+    Address: 0x20991c8
+  - Name: aA267
+    Segment: 0x0
+    Address: 0x20991d0
+  - Name: aA266
+    Segment: 0x0
+    Address: 0x20991d8
+  - Name: aA265
+    Segment: 0x0
+    Address: 0x20991e0
+  - Name: aA264
+    Segment: 0x0
+    Address: 0x20991e8
+  - Name: aA263
+    Segment: 0x0
+    Address: 0x20991f0
+  - Name: aA262
+    Segment: 0x0
+    Address: 0x20991f8
+  - Name: aA205
+    Segment: 0x0
+    Address: 0x2099200
+  - Name: aA260
+    Segment: 0x0
+    Address: 0x2099208
+  - Name: aA259
+    Segment: 0x0
+    Address: 0x2099210
+  - Name: aA258
+    Segment: 0x0
+    Address: 0x2099218
+  - Name: aA257
+    Segment: 0x0
+    Address: 0x2099220
+  - Name: aA256
+    Segment: 0x0
+    Address: 0x2099228
+  - Name: aA255
+    Segment: 0x0
+    Address: 0x2099230
+  - Name: aA254
+    Segment: 0x0
+    Address: 0x2099238
+  - Name: aA250
+    Segment: 0x0
+    Address: 0x2099240
+  - Name: aA251
+    Segment: 0x0
+    Address: 0x2099248
+  - Name: aA284
+    Segment: 0x0
+    Address: 0x2099250
+  - Name: aA186
+    Segment: 0x0
+    Address: 0x2099258
+  - Name: aA249
+    Segment: 0x0
+    Address: 0x2099260
+  - Name: aA248
+    Segment: 0x0
+    Address: 0x2099268
+  - Name: aA247
+    Segment: 0x0
+    Address: 0x2099270
+  - Name: aA246
+    Segment: 0x0
+    Address: 0x2099278
+  - Name: aA173
+    Segment: 0x0
+    Address: 0x2099280
+  - Name: aA244
+    Segment: 0x0
+    Address: 0x2099288
+  - Name: aA243
+    Segment: 0x0
+    Address: 0x2099290
+  - Name: aA242
+    Segment: 0x0
+    Address: 0x2099298
+  - Name: aA241
+    Segment: 0x0
+    Address: 0x20992a0
+  - Name: aA240
+    Segment: 0x0
+    Address: 0x20992a8
+  - Name: aA239
+    Segment: 0x0
+    Address: 0x20992b0
+  - Name: aA238
+    Segment: 0x0
+    Address: 0x20992b8
+  - Name: aA157
+    Segment: 0x0
+    Address: 0x20992c0
+  - Name: aA236
+    Segment: 0x0
+    Address: 0x20992c8
+  - Name: aA235
+    Segment: 0x0
+    Address: 0x20992d0
+  - Name: aA234
+    Segment: 0x0
+    Address: 0x20992d8
+  - Name: aA233
+    Segment: 0x0
+    Address: 0x20992e0
+  - Name: aA232
+    Segment: 0x0
+    Address: 0x20992e8
+  - Name: aA231
+    Segment: 0x0
+    Address: 0x20992f0
+  - Name: aA230
+    Segment: 0x0
+    Address: 0x20992f8
+  - Name: aA229
+    Segment: 0x0
+    Address: 0x2099300
+  - Name: aA228
+    Segment: 0x0
+    Address: 0x2099308
+  - Name: aA227
+    Segment: 0x0
+    Address: 0x2099310
+  - Name: aA226
+    Segment: 0x0
+    Address: 0x2099318
+  - Name: aA225
+    Segment: 0x0
+    Address: 0x2099320
+  - Name: aA224
+    Segment: 0x0
+    Address: 0x2099328
+  - Name: aA223
+    Segment: 0x0
+    Address: 0x2099330
+  - Name: aA222
+    Segment: 0x0
+    Address: 0x2099338
+  - Name: aA125
+    Segment: 0x0
+    Address: 0x2099340
+  - Name: aA220
+    Segment: 0x0
+    Address: 0x2099348
+  - Name: aA219
+    Segment: 0x0
+    Address: 0x2099350
+  - Name: aA218
+    Segment: 0x0
+    Address: 0x2099358
+  - Name: aA217
+    Segment: 0x0
+    Address: 0x2099360
+  - Name: aA216
+    Segment: 0x0
+    Address: 0x2099368
+  - Name: aA215
+    Segment: 0x0
+    Address: 0x2099370
+  - Name: aA214
+    Segment: 0x0
+    Address: 0x2099378
+  - Name: aA213
+    Segment: 0x0
+    Address: 0x2099380
+  - Name: aA212
+    Segment: 0x0
+    Address: 0x2099388
+  - Name: aA211
+    Segment: 0x0
+    Address: 0x2099390
+  - Name: aA210
+    Segment: 0x0
+    Address: 0x2099398
+  - Name: aA209
+    Segment: 0x0
+    Address: 0x20993a0
+  - Name: aA208
+    Segment: 0x0
+    Address: 0x20993a8
+  - Name: aA207
+    Segment: 0x0
+    Address: 0x20993b0
+  - Name: aA206
+    Segment: 0x0
+    Address: 0x20993b8
+  - Name: aA093
+    Segment: 0x0
+    Address: 0x20993c0
+  - Name: aA204
+    Segment: 0x0
+    Address: 0x20993c8
+  - Name: aA203
+    Segment: 0x0
+    Address: 0x20993d0
+  - Name: aA202
+    Segment: 0x0
+    Address: 0x20993d8
+  - Name: aA201
+    Segment: 0x0
+    Address: 0x20993e0
+  - Name: aA200
+    Segment: 0x0
+    Address: 0x20993e8
+  - Name: aA199
+    Segment: 0x0
+    Address: 0x20993f0
+  - Name: aA198
+    Segment: 0x0
+    Address: 0x20993f8
+  - Name: aA197
+    Segment: 0x0
+    Address: 0x2099400
+  - Name: aA196
+    Segment: 0x0
+    Address: 0x2099408
+  - Name: aA195
+    Segment: 0x0
+    Address: 0x2099410
+  - Name: aA194
+    Segment: 0x0
+    Address: 0x2099418
+  - Name: aA193
+    Segment: 0x0
+    Address: 0x2099420
+  - Name: aA192
+    Segment: 0x0
+    Address: 0x2099428
+  - Name: aA191
+    Segment: 0x0
+    Address: 0x2099430
+  - Name: aA190
+    Segment: 0x0
+    Address: 0x2099438
+  - Name: aA187
+    Segment: 0x0
+    Address: 0x2099440
+  - Name: aA252
+    Segment: 0x0
+    Address: 0x2099448
+  - Name: aA188
+    Segment: 0x0
+    Address: 0x2099450
+  - Name: aA060
+    Segment: 0x0
+    Address: 0x2099458
+  - Name: aA185
+    Segment: 0x0
+    Address: 0x2099460
+  - Name: aA184
+    Segment: 0x0
+    Address: 0x2099468
+  - Name: aA183
+    Segment: 0x0
+    Address: 0x2099470
+  - Name: aA182
+    Segment: 0x0
+    Address: 0x2099478
+  - Name: aA181
+    Segment: 0x0
+    Address: 0x2099480
+  - Name: aA180
+    Segment: 0x0
+    Address: 0x2099488
+  - Name: aA179
+    Segment: 0x0
+    Address: 0x2099490
+  - Name: aA178
+    Segment: 0x0
+    Address: 0x2099498
+  - Name: aA177
+    Segment: 0x0
+    Address: 0x20994a0
+  - Name: aA176
+    Segment: 0x0
+    Address: 0x20994a8
+  - Name: aA175
+    Segment: 0x0
+    Address: 0x20994b0
+  - Name: aA174
+    Segment: 0x0
+    Address: 0x20994b8
+  - Name: aA029
+    Segment: 0x0
+    Address: 0x20994c0
+  - Name: aA172
+    Segment: 0x0
+    Address: 0x20994c8
+  - Name: aA171
+    Segment: 0x0
+    Address: 0x20994d0
+  - Name: aA170
+    Segment: 0x0
+    Address: 0x20994d8
+  - Name: aA169
+    Segment: 0x0
+    Address: 0x20994e0
+  - Name: aA168
+    Segment: 0x0
+    Address: 0x20994e8
+  - Name: aA167
+    Segment: 0x0
+    Address: 0x20994f0
+  - Name: aA166
+    Segment: 0x0
+    Address: 0x20994f8
+  - Name: aA165
+    Segment: 0x0
+    Address: 0x2099500
+  - Name: aA164
+    Segment: 0x0
+    Address: 0x2099508
+  - Name: aA163
+    Segment: 0x0
+    Address: 0x2099510
+  - Name: aA162
+    Segment: 0x0
+    Address: 0x2099518
+  - Name: aA161
+    Segment: 0x0
+    Address: 0x2099520
+  - Name: aA160
+    Segment: 0x0
+    Address: 0x2099528
+  - Name: aA159
+    Segment: 0x0
+    Address: 0x2099530
+  - Name: aA158
+    Segment: 0x0
+    Address: 0x2099538
+  - Name: aA061
+    Segment: 0x0
+    Address: 0x2099540
+  - Name: aA156
+    Segment: 0x0
+    Address: 0x2099548
+  - Name: aA155
+    Segment: 0x0
+    Address: 0x2099550
+  - Name: aA154
+    Segment: 0x0
+    Address: 0x2099558
+  - Name: aA153
+    Segment: 0x0
+    Address: 0x2099560
+  - Name: aA152
+    Segment: 0x0
+    Address: 0x2099568
+  - Name: aA151
+    Segment: 0x0
+    Address: 0x2099570
+  - Name: aA150
+    Segment: 0x0
+    Address: 0x2099578
+  - Name: aA149
+    Segment: 0x0
+    Address: 0x2099580
+  - Name: aA148
+    Segment: 0x0
+    Address: 0x2099588
+  - Name: aA147
+    Segment: 0x0
+    Address: 0x2099590
+  - Name: aA146
+    Segment: 0x0
+    Address: 0x2099598
+  - Name: aA145
+    Segment: 0x0
+    Address: 0x20995a0
+  - Name: aA144
+    Segment: 0x0
+    Address: 0x20995a8
+  - Name: aA143
+    Segment: 0x0
+    Address: 0x20995b0
+  - Name: aA142
+    Segment: 0x0
+    Address: 0x20995b8
+  - Name: aA141
+    Segment: 0x0
+    Address: 0x20995c0
+  - Name: aA140
+    Segment: 0x0
+    Address: 0x20995c8
+  - Name: aA139
+    Segment: 0x0
+    Address: 0x20995d0
+  - Name: aA138
+    Segment: 0x0
+    Address: 0x20995d8
+  - Name: aA137
+    Segment: 0x0
+    Address: 0x20995e0
+  - Name: aA136
+    Segment: 0x0
+    Address: 0x20995e8
+  - Name: aA135
+    Segment: 0x0
+    Address: 0x20995f0
+  - Name: aA134
+    Segment: 0x0
+    Address: 0x20995f8
+  - Name: aA133
+    Segment: 0x0
+    Address: 0x2099600
+  - Name: aA132
+    Segment: 0x0
+    Address: 0x2099608
+  - Name: aA131
+    Segment: 0x0
+    Address: 0x2099610
+  - Name: aA130
+    Segment: 0x0
+    Address: 0x2099618
+  - Name: aA129
+    Segment: 0x0
+    Address: 0x2099620
+  - Name: aA128
+    Segment: 0x0
+    Address: 0x2099628
+  - Name: aA127
+    Segment: 0x0
+    Address: 0x2099630
+  - Name: aA126
+    Segment: 0x0
+    Address: 0x2099638
+  - Name: aA189
+    Segment: 0x0
+    Address: 0x2099640
+  - Name: aA124
+    Segment: 0x0
+    Address: 0x2099648
+  - Name: aA123
+    Segment: 0x0
+    Address: 0x2099650
+  - Name: aA122
+    Segment: 0x0
+    Address: 0x2099658
+  - Name: aA121
+    Segment: 0x0
+    Address: 0x2099660
+  - Name: aA120
+    Segment: 0x0
+    Address: 0x2099668
+  - Name: aA119
+    Segment: 0x0
+    Address: 0x2099670
+  - Name: aA118
+    Segment: 0x0
+    Address: 0x2099678
+  - Name: aA117
+    Segment: 0x0
+    Address: 0x2099680
+  - Name: aA116
+    Segment: 0x0
+    Address: 0x2099688
+  - Name: aA115
+    Segment: 0x0
+    Address: 0x2099690
+  - Name: aA114
+    Segment: 0x0
+    Address: 0x2099698
+  - Name: aA113
+    Segment: 0x0
+    Address: 0x20996a0
+  - Name: aA112
+    Segment: 0x0
+    Address: 0x20996a8
+  - Name: aA111
+    Segment: 0x0
+    Address: 0x20996b0
+  - Name: aA110
+    Segment: 0x0
+    Address: 0x20996b8
+  - Name: aA109
+    Segment: 0x0
+    Address: 0x20996c0
+  - Name: aA108
+    Segment: 0x0
+    Address: 0x20996c8
+  - Name: aA107
+    Segment: 0x0
+    Address: 0x20996d0
+  - Name: aA106
+    Segment: 0x0
+    Address: 0x20996d8
+  - Name: aA105
+    Segment: 0x0
+    Address: 0x20996e0
+  - Name: aA104
+    Segment: 0x0
+    Address: 0x20996e8
+  - Name: aA103
+    Segment: 0x0
+    Address: 0x20996f0
+  - Name: aA102
+    Segment: 0x0
+    Address: 0x20996f8
+  - Name: aA101
+    Segment: 0x0
+    Address: 0x2099700
+  - Name: aA100
+    Segment: 0x0
+    Address: 0x2099708
+  - Name: aA099
+    Segment: 0x0
+    Address: 0x2099710
+  - Name: aA098
+    Segment: 0x0
+    Address: 0x2099718
+  - Name: aA097
+    Segment: 0x0
+    Address: 0x2099720
+  - Name: aA096
+    Segment: 0x0
+    Address: 0x2099728
+  - Name: aA095
+    Segment: 0x0
+    Address: 0x2099730
+  - Name: aA094
+    Segment: 0x0
+    Address: 0x2099738
+  - Name: aA253
+    Segment: 0x0
+    Address: 0x2099740
+  - Name: aA092
+    Segment: 0x0
+    Address: 0x2099748
+  - Name: aA091
+    Segment: 0x0
+    Address: 0x2099750
+  - Name: aA090
+    Segment: 0x0
+    Address: 0x2099758
+  - Name: aA089
+    Segment: 0x0
+    Address: 0x2099760
+  - Name: aA088
+    Segment: 0x0
+    Address: 0x2099768
+  - Name: aA087
+    Segment: 0x0
+    Address: 0x2099770
+  - Name: aA086
+    Segment: 0x0
+    Address: 0x2099778
+  - Name: aA085
+    Segment: 0x0
+    Address: 0x2099780
+  - Name: aA084
+    Segment: 0x0
+    Address: 0x2099788
+  - Name: aA083
+    Segment: 0x0
+    Address: 0x2099790
+  - Name: aA082
+    Segment: 0x0
+    Address: 0x2099798
+  - Name: aA081
+    Segment: 0x0
+    Address: 0x20997a0
+  - Name: aA080
+    Segment: 0x0
+    Address: 0x20997a8
+  - Name: aA079
+    Segment: 0x0
+    Address: 0x20997b0
+  - Name: aA078
+    Segment: 0x0
+    Address: 0x20997b8
+  - Name: aA077
+    Segment: 0x0
+    Address: 0x20997c0
+  - Name: aA076
+    Segment: 0x0
+    Address: 0x20997c8
+  - Name: aA075
+    Segment: 0x0
+    Address: 0x20997d0
+  - Name: aA074
+    Segment: 0x0
+    Address: 0x20997d8
+  - Name: aA073
+    Segment: 0x0
+    Address: 0x20997e0
+  - Name: aA072
+    Segment: 0x0
+    Address: 0x20997e8
+  - Name: aA071
+    Segment: 0x0
+    Address: 0x20997f0
+  - Name: aA070
+    Segment: 0x0
+    Address: 0x20997f8
+  - Name: aA069
+    Segment: 0x0
+    Address: 0x2099800
+  - Name: aA068
+    Segment: 0x0
+    Address: 0x2099808
+  - Name: aA067
+    Segment: 0x0
+    Address: 0x2099810
+  - Name: aA066
+    Segment: 0x0
+    Address: 0x2099818
+  - Name: aA065
+    Segment: 0x0
+    Address: 0x2099820
+  - Name: aA064
+    Segment: 0x0
+    Address: 0x2099828
+  - Name: aA063
+    Segment: 0x0
+    Address: 0x2099830
+  - Name: aA062
+    Segment: 0x0
+    Address: 0x2099838
+  - Name: aA285
+    Segment: 0x0
+    Address: 0x2099840
+  - Name: aA301
+    Segment: 0x0
+    Address: 0x2099848
+  - Name: aA059
+    Segment: 0x0
+    Address: 0x2099850
+  - Name: aA058
+    Segment: 0x0
+    Address: 0x2099858
+  - Name: aA057
+    Segment: 0x0
+    Address: 0x2099860
+  - Name: aA056
+    Segment: 0x0
+    Address: 0x2099868
+  - Name: aA055
+    Segment: 0x0
+    Address: 0x2099870
+  - Name: aA054
+    Segment: 0x0
+    Address: 0x2099878
+  - Name: aA053
+    Segment: 0x0
+    Address: 0x2099880
+  - Name: aA052
+    Segment: 0x0
+    Address: 0x2099888
+  - Name: aA051
+    Segment: 0x0
+    Address: 0x2099890
+  - Name: aA050
+    Segment: 0x0
+    Address: 0x2099898
+  - Name: aA049
+    Segment: 0x0
+    Address: 0x20998a0
+  - Name: aA048
+    Segment: 0x0
+    Address: 0x20998a8
+  - Name: aA047
+    Segment: 0x0
+    Address: 0x20998b0
+  - Name: aA046
+    Segment: 0x0
+    Address: 0x20998b8
+  - Name: aA045
+    Segment: 0x0
+    Address: 0x20998c0
+  - Name: aA044
+    Segment: 0x0
+    Address: 0x20998c8
+  - Name: aA043
+    Segment: 0x0
+    Address: 0x20998d0
+  - Name: aA042
+    Segment: 0x0
+    Address: 0x20998d8
+  - Name: aA041
+    Segment: 0x0
+    Address: 0x20998e0
+  - Name: aA040
+    Segment: 0x0
+    Address: 0x20998e8
+  - Name: aA039
+    Segment: 0x0
+    Address: 0x20998f0
+  - Name: aA038
+    Segment: 0x0
+    Address: 0x20998f8
+  - Name: aA037
+    Segment: 0x0
+    Address: 0x2099900
+  - Name: aA036
+    Segment: 0x0
+    Address: 0x2099908
+  - Name: aA035
+    Segment: 0x0
+    Address: 0x2099910
+  - Name: aA034
+    Segment: 0x0
+    Address: 0x2099918
+  - Name: aA033
+    Segment: 0x0
+    Address: 0x2099920
+  - Name: aA032
+    Segment: 0x0
+    Address: 0x2099928
+  - Name: aA031
+    Segment: 0x0
+    Address: 0x2099930
+  - Name: aA030
+    Segment: 0x0
+    Address: 0x2099938
+  - Name: aA000
+    Segment: 0x0
+    Address: 0x2099940
+  - Name: aA028
+    Segment: 0x0
+    Address: 0x2099948
+  - Name: aA027
+    Segment: 0x0
+    Address: 0x2099950
+  - Name: aA026
+    Segment: 0x0
+    Address: 0x2099958
+  - Name: aA025
+    Segment: 0x0
+    Address: 0x2099960
+  - Name: aA024
+    Segment: 0x0
+    Address: 0x2099968
+  - Name: aA023
+    Segment: 0x0
+    Address: 0x2099970
+  - Name: aA022
+    Segment: 0x0
+    Address: 0x2099978
+  - Name: aA021
+    Segment: 0x0
+    Address: 0x2099980
+  - Name: aA020
+    Segment: 0x0
+    Address: 0x2099988
+  - Name: aA019
+    Segment: 0x0
+    Address: 0x2099990
+  - Name: aA018
+    Segment: 0x0
+    Address: 0x2099998
+  - Name: aA017
+    Segment: 0x0
+    Address: 0x20999a0
+  - Name: aA016
+    Segment: 0x0
+    Address: 0x20999a8
+  - Name: aA015
+    Segment: 0x0
+    Address: 0x20999b0
+  - Name: aA014
+    Segment: 0x0
+    Address: 0x20999b8
+  - Name: aA013
+    Segment: 0x0
+    Address: 0x20999c0
+  - Name: aA012
+    Segment: 0x0
+    Address: 0x20999c8
+  - Name: aA011
+    Segment: 0x0
+    Address: 0x20999d0
+  - Name: aA010
+    Segment: 0x0
+    Address: 0x20999d8
+  - Name: aA009
+    Segment: 0x0
+    Address: 0x20999e0
+  - Name: aA008
+    Segment: 0x0
+    Address: 0x20999e8
+  - Name: aA007
+    Segment: 0x0
+    Address: 0x20999f0
+  - Name: aA006
+    Segment: 0x0
+    Address: 0x20999f8
+  - Name: aA005
+    Segment: 0x0
+    Address: 0x2099a00
+  - Name: aA004
+    Segment: 0x0
+    Address: 0x2099a08
+  - Name: aA003
+    Segment: 0x0
+    Address: 0x2099a10
+  - Name: aA002
+    Segment: 0x0
+    Address: 0x2099a18
+  - Name: aGflUseC
+    Segment: 0x0
+    Address: 0x2099ef0
+  - Name: aSwanSoundDataS
+    Segment: 0x0
+    Address: 0x2099efc
+  - Name: aPmVoiceC
+    Segment: 0x0
+    Address: 0x2099f14
+  - Name: aSndMicC
+    Segment: 0x0
+    Address: 0x2099f2c
+  - Name: aBgmInfoC
+    Segment: 0x0
+    Address: 0x2099f38
+  - Name: aSndStrmC
+    Segment: 0x0
+    Address: 0x2099f44
+  - Name: aSaveControlC
+    Segment: 0x0
+    Address: 0x2099f50
+  - Name: a0
+    Segment: 0x0
+    Address: 0x2099f64
+  - Name: aSavecontrolwor
+    Segment: 0x0
+    Address: 0x2099f68
+  - Name: aCtrlSvExtraExt
+    Segment: 0x0
+    Address: 0x2099f80
+  - Name: a0_4
+    Segment: 0x0
+    Address: 0x2099fa8
+  - Name: aTraynumBoxMaxT
+    Segment: 0x0
+    Address: 0x2099fac
+  - Name: aTraynumBoxMaxT_0
+    Segment: 0x0
+    Address: 0x2099fc4
+  - Name: aPosBoxMaxPos
+    Segment: 0x0
+    Address: 0x209a000
+  - Name: aTraynumBoxMaxT_1
+    Segment: 0x0
+    Address: 0x209a010
+  - Name: aPosBoxMaxPos_0
+    Segment: 0x0
+    Address: 0x209a050
+  - Name: aBoxSavedataC
+    Segment: 0x0
+    Address: 0x209a064
+  - Name: aPerapvoiceC
+    Segment: 0x0
+    Address: 0x209a074
+  - Name: aMyitemSavedata
+    Segment: 0x0
+    Address: 0x209a084
+  - Name: aConfigC
+    Segment: 0x0
+    Address: 0x209a098
+  - Name: aMystatusC
+    Segment: 0x0
+    Address: 0x209a0a4
+  - Name: aPlaytimeC
+    Segment: 0x0
+    Address: 0x209a0b0
+  - Name: aMailC
+    Segment: 0x0
+    Address: 0x209a164
+  - Name: aWifilistC
+    Segment: 0x0
+    Address: 0x209a16c
+  - Name: aMysteryDataC
+    Segment: 0x0
+    Address: 0x209a178
+  - Name: aRegulationC
+    Segment: 0x0
+    Address: 0x209a188
+  - Name: aBattleRecC
+    Segment: 0x0
+    Address: 0x209a198
+  - Name: aMusicalDistSav
+    Segment: 0x0
+    Address: 0x209a1a8
+  - Name: aGdsProfileC
+    Segment: 0x0
+    Address: 0x209a1bc
+  - Name: aBsubwaySavedat
+    Segment: 0x0
+    Address: 0x209a1cc
+  - Name: aSymbolSaveC
+    Segment: 0x0
+    Address: 0x209a1e0
+  - Name: aBattleExaminat
+    Segment: 0x0
+    Address: 0x209a1f0
+  - Name: aPokewoodRecC
+    Segment: 0x0
+    Address: 0x209a208
+  - Name: aCygnusSaveCont
+    Segment: 0x0
+    Address: 0x209a218
+  - Name: aNetErrC
+    Segment: 0x0
+    Address: 0x209a230
+  - Name: a0_5
+    Segment: 0x0
+    Address: 0x209a240
+  - Name: aNumAllbeaconMa
+    Segment: 0x0
+    Address: 0x209a248
+  - Name: aLocalworkNull
+    Segment: 0x0
+    Address: 0x209a260
+  - Name: aWihDwcC
+    Segment: 0x0
+    Address: 0x209a274
+  - Name: aLocalwork
+    Segment: 0x0
+    Address: 0x209a280
+  - Name: aFreespot
+    Segment: 0x0
+    Address: 0x209a28c
+  - Name: aLocalcfgNull
+    Segment: 0x0
+    Address: 0x209a298
+  - Name: aLocalcfg
+    Segment: 0x0
+    Address: 0x209a2a8
+  - Name: aNetSaveC
+    Segment: 0x0
+    Address: 0x209a2b4
+  - Name: aGameBeaconAcce
+    Segment: 0x0
+    Address: 0x209a2c0
+  - Name: aLinkFestivalC
+    Segment: 0x0
+    Address: 0x209a2d8
+  - Name: aFestMissionC
+    Segment: 0x0
+    Address: 0x209a2e8
+  - Name: aVmC
+    Segment: 0x0
+    Address: 0x209a2f8
+  - Name: aIcaAnimeC
+    Segment: 0x0
+    Address: 0x209a300
+  - Name: aNsbtxToClwkC
+    Segment: 0x0
+    Address: 0x209a30c
+  - Name: aGameEventC
+    Segment: 0x0
+    Address: 0x209a31c
+  - Name: aGameDataC
+    Segment: 0x0
+    Address: 0x209a32c
+  - Name: aBtlSetupC
+    Segment: 0x0
+    Address: 0x209a33c
+  - Name: aZonedataC
+    Segment: 0x0
+    Address: 0x209a374
+  - Name: aFieldStatusC
+    Segment: 0x0
+    Address: 0x209a380
+  - Name: aMcssC
+    Segment: 0x0
+    Address: 0x209a390
+  - Name: aPokeToolC
+    Segment: 0x0
+    Address: 0x209a3a8
+  - Name: aPokeRegulation
+    Segment: 0x0
+    Address: 0x209a3b4
+  - Name: aPokepartyC
+    Segment: 0x0
+    Address: 0x209a3c8
+  - Name: aPokePersonalC
+    Segment: 0x0
+    Address: 0x209a3d4
+  - Name: aShinkaCheckC
+    Segment: 0x0
+    Address: 0x209a3f4
+  - Name: aWazaToolC
+    Segment: 0x0
+    Address: 0x209a404
+  - Name: aPrintsysC
+    Segment: 0x0
+    Address: 0x209a410
+  - Name: aGfFontC
+    Segment: 0x0
+    Address: 0x209a41c
+  - Name: aWordsetC
+    Segment: 0x0
+    Address: 0x209a428
+  - Name: aBmpMenuworkC
+    Segment: 0x0
+    Address: 0x209a438
+  - Name: aBmpMenuC
+    Segment: 0x0
+    Address: 0x209a448
+  - Name: aBmpMenulistC
+    Segment: 0x0
+    Address: 0x209a454
+  - Name: aBmpCursorC
+    Segment: 0x0
+    Address: 0x209a464
+  - Name: aFileUtilC
+    Segment: 0x0
+    Address: 0x209a474
+  - Name: aPalanmC
+    Segment: 0x0
+    Address: 0x209a48c
+  - Name: aWipeC
+    Segment: 0x0
+    Address: 0x209a498
+  - Name: aWipeSubC
+    Segment: 0x0
+    Address: 0x209a520
+  - Name: aPmsiParamC
+    Segment: 0x0
+    Address: 0x209a52c
+  - Name: aPmsWordC
+    Segment: 0x0
+    Address: 0x209a53c
+  - Name: aInfowinC
+    Segment: 0x0
+    Address: 0x209a548
+  - Name: aActorToolC
+    Segment: 0x0
+    Address: 0x209a554
+  - Name: aBmpOamC
+    Segment: 0x0
+    Address: 0x209a564
+  - Name: aCursorMoveC
+    Segment: 0x0
+    Address: 0x209a570
+  - Name: aGameCommC
+    Segment: 0x0
+    Address: 0x209a580
+  - Name: aGamebeaconsysN
+    Segment: 0x0
+    Address: 0x209a590
+  - Name: aGameBeaconC
+    Segment: 0x0
+    Address: 0x209a5a8
+  - Name: aGamebeaconsysN_0
+    Segment: 0x0
+    Address: 0x209a5b8
+  - Name: aBeaconStatusC
+    Segment: 0x0
+    Address: 0x209a5d0
+  - Name: aAppTaskmenuC
+    Segment: 0x0
+    Address: 0x209a5e0
+  - Name: aAppKeycursorC
+    Segment: 0x0
+    Address: 0x209a5f0
+  - Name: aPlayerVolumeFa
+    Segment: 0x0
+    Address: 0x209a600
+  - Name: aFieldSoundSyst
+    Segment: 0x0
+    Address: 0x209a690
+  - Name: aRingtoneSysC
+    Segment: 0x0
+    Address: 0x209a6a8
+  - Name: aTpokeDataC
+    Segment: 0x0
+    Address: 0x209a6b8
+  - Name: aTrToolC
+    Segment: 0x0
+    Address: 0x209a6c8
+  - Name: aIssCitySysC
+    Segment: 0x0
+    Address: 0x209a6d4
+  - Name: aIssCityUnitC
+    Segment: 0x0
+    Address: 0x209a6e4
+  - Name: aIssRoadSysC
+    Segment: 0x0
+    Address: 0x209a6f4
+  - Name: aIssDungeonSysC
+    Segment: 0x0
+    Address: 0x209a704
+  - Name: aIssSysC
+    Segment: 0x0
+    Address: 0x209a718
+  - Name: aIss3dsSysC
+    Segment: 0x0
+    Address: 0x209a724
+  - Name: aIssZoneSysC
+    Segment: 0x0
+    Address: 0x209a734
+  - Name: aIssSwitchSysC
+    Segment: 0x0
+    Address: 0x209a744
+  - Name: aIssSwitchSetC
+    Segment: 0x0
+    Address: 0x209a758
+  - Name: aIssSwitchC
+    Segment: 0x0
+    Address: 0x209a76c
+  - Name: aBgwinfrmC
+    Segment: 0x0
+    Address: 0x209a77c
+  - Name: aPokegraC
+    Segment: 0x0
+    Address: 0x209a798
+  - Name: aPmsDrawC
+    Segment: 0x0
+    Address: 0x209a7a4
+  - Name: aBagParamC
+    Segment: 0x0
+    Address: 0x209a7b0
+  - Name: aCodeinParamC
+    Segment: 0x0
+    Address: 0x209a7bc
+  - Name: aPlistDataSetup
+    Segment: 0x0
+    Address: 0x209a7cc
+  - Name: aScreentexC
+    Segment: 0x0
+    Address: 0x209a7e0
+  - Name: aCommPlayerSupp
+    Segment: 0x0
+    Address: 0x209a7ec
+  - Name: aBlinkPalanmC
+    Segment: 0x0
+    Address: 0x209a804
+  - Name: aTimeIconC
+    Segment: 0x0
+    Address: 0x209a814
+  - Name: aResonanceResor
+    Segment: 0x0
+    Address: 0x209a820
+  - Name: aResortBinaryC
+    Segment: 0x0
+    Address: 0x209a838
+  - Name: aResortWorkC
+    Segment: 0x0
+    Address: 0x209a848
+  - Name: aSystemAlloc
+    Segment: 0x0
+    Address: 0x209a85c
+  - Name: aTcblC
+    Segment: 0x0
+    Address: 0x209a86c
+  - Name: aProcsysC
+    Segment: 0x0
+    Address: 0x209a874
+  - Name: aBackupSystemC
+    Segment: 0x0
+    Address: 0x209a880
+  - Name: aSvsysNull
+    Segment: 0x0
+    Address: 0x209a894
+  - Name: aSvwkSizeSvSave
+    Segment: 0x0
+    Address: 0x209a8a4
+  - Name: aNextFrameTrue
+    Segment: 0x0
+    Address: 0x209a8c4
+  - Name: aLockIdOsLockId
+    Segment: 0x0
+    Address: 0x209a8e0
+  - Name: aSavedataC
+    Segment: 0x0
+    Address: 0x209a8fc
+  - Name: aIdSvdtTableMax
+    Segment: 0x0
+    Address: 0x209a90c
+  - Name: aTableIGmdataid
+    Segment: 0x0
+    Address: 0x209a924
+  - Name: aSavedatasize0x
+    Segment: 0x0
+    Address: 0x209a93c
+  - Name: aGmdataidSvdtTa
+    Segment: 0x0
+    Address: 0x209a970
+  - Name: aAreamanC
+    Segment: 0x0
+    Address: 0x209a98c
+  - Name: aVmanC
+    Segment: 0x0
+    Address: 0x209a998
+  - Name: aGfOverlayC
+    Segment: 0x0
+    Address: 0x209a9a4
+  - Name: a0_0
+    Segment: 0x0
+    Address: 0x209a9b8
+  - Name: aUiC
+    Segment: 0x0
+    Address: 0x209a9bc
+  - Name: aTouchpanelC
+    Segment: 0x0
+    Address: 0x209a9c4
+  - Name: aKeyC
+    Segment: 0x0
+    Address: 0x209a9d4
+  - Name: aPdataarea
+    Segment: 0x0
+    Address: 0x209a9e0
+  - Name: a0_1
+    Segment: 0x0
+    Address: 0x209a9ec
+  - Name: a0_2
+    Segment: 0x0
+    Address: 0x209a9f4
+  - Name: aU16Size0xffff2
+    Segment: 0x0
+    Address: 0x209a9f8
+  - Name: aRet
+    Segment: 0x0
+    Address: 0x209aa10
+  - Name: aNetQueueC
+    Segment: 0x0
+    Address: 0x209aa14
+  - Name: aWmIconC
+    Segment: 0x0
+    Address: 0x209aa20
+  - Name: aNetSystemC
+    Segment: 0x0
+    Address: 0x209aa58
+  - Name: aNetidGflNetMac
+    Segment: 0x0
+    Address: 0x209aa6c
+  - Name: a0_7
+    Segment: 0x0
+    Address: 0x209aa88
+  - Name: aPnetiniBmpmode
+    Segment: 0x0
+    Address: 0x209aa8c
+  - Name: a0_3
+    Segment: 0x0
+    Address: 0x209aaa4
+  - Name: aNetHandleC
+    Segment: 0x0
+    Address: 0x209aaa8
+  - Name: aPbasework
+    Segment: 0x0
+    Address: 0x209aab8
+  - Name: aPbasework_0
+    Segment: 0x0
+    Address: 0x209aac4
+  - Name: aPbaseworkTimin
+    Segment: 0x0
+    Address: 0x209aad0
+  - Name: aNetidGflNetNet
+    Segment: 0x0
+    Address: 0x209aaec
+  - Name: aNetidGflNetHan
+    Segment: 0x0
+    Address: 0x209ab08
+  - Name: aNetCommandC
+    Segment: 0x0
+    Address: 0x209ab34
+  - Name: aBasetableListn
+    Segment: 0x0
+    Address: 0x209ab48
+  - Name: aPcommandworkAn
+    Segment: 0x0
+    Address: 0x209ab60
+  - Name: aPcommandworkAn_0
+    Segment: 0x0
+    Address: 0x209ab90
+  - Name: aPnetiniMaxsend
+    Segment: 0x0
+    Address: 0x209abb8
+  - Name: aNullPnetstate
+    Segment: 0x0
+    Address: 0x209abec
+  - Name: aNetStateC
+    Segment: 0x0
+    Address: 0x209ac00
+  - Name: aU32PnetstateAm
+    Segment: 0x0
+    Address: 0x209ac0c
+  - Name: aPnetiniBnettyp
+    Segment: 0x0
+    Address: 0x209ac30
+  - Name: aPnetstate
+    Segment: 0x0
+    Address: 0x209acb4
+  - Name: aNetC
+    Segment: 0x0
+    Address: 0x209ace4
+  - Name: aPnetPdevtable
+    Segment: 0x0
+    Address: 0x209acf0
+  - Name: aPnetinitMaxsen
+    Segment: 0x0
+    Address: 0x209ad00
+  - Name: a0_8
+    Segment: 0x0
+    Address: 0x209ad30
+  - Name: aSendid7
+    Segment: 0x0
+    Address: 0x209ad34
+  - Name: aPnetAnetinitMa
+    Segment: 0x0
+    Address: 0x209ad40
+  - Name: aPnet
+    Segment: 0x0
+    Address: 0x209ad74
+  - Name: aNetIrcWireless
+    Segment: 0x0
+    Address: 0x209ad7c
+  - Name: a0_9
+    Segment: 0x0
+    Address: 0x209ad94
+  - Name: aPtempNumCollec
+    Segment: 0x0
+    Address: 0x209ad98
+  - Name: aNetiwsys
+    Segment: 0x0
+    Address: 0x209adb4
+  - Name: aNetldataworkNu
+    Segment: 0x0
+    Address: 0x209adc4
+  - Name: aNetLowerDataC
+    Segment: 0x0
+    Address: 0x209addc
+  - Name: aNetldataworkNu_0
+    Segment: 0x0
+    Address: 0x209adf0
+  - Name: aNetldataworkSe
+    Segment: 0x0
+    Address: 0x209ae08
+  - Name: aNetldataworkPo
+    Segment: 0x0
+    Address: 0x209ae28
+  - Name: aNetldataworkPo_0
+    Segment: 0x0
+    Address: 0x209ae50
+  - Name: aBuffersizeIsNo
+    Segment: 0x0
+    Address: 0x209ae78
+  - Name: aGfStandardC
+    Segment: 0x0
+    Address: 0x209ae9c
+  - Name: aBgSysC
+    Segment: 0x0
+    Address: 0x209aeac
+  - Name: aBmpC
+    Segment: 0x0
+    Address: 0x209aeb8
+  - Name: aBmpWinC
+    Segment: 0x0
+    Address: 0x209aec0
+  - Name: aStrbufC
+    Segment: 0x0
+    Address: 0x209aed0
+  - Name: aMsgdataC
+    Segment: 0x0
+    Address: 0x209aedc
+  - Name: aSystemfontC
+    Segment: 0x0
+    Address: 0x209aee8
+  - Name: aG3dSystemC
+    Segment: 0x0
+    Address: 0x209aef8
+  - Name: aG3dUtilC
+    Segment: 0x0
+    Address: 0x209af08
+  - Name: aG3dCameraC
+    Segment: 0x0
+    Address: 0x209af14
+  - Name: aG3dLightC
+    Segment: 0x0
+    Address: 0x209af24
+  - Name: aArcToolC
+    Segment: 0x0
+    Address: 0x209af30
+  - Name: aArchivemoveima
+    Segment: 0x0
+    Address: 0x209af40
+  - Name: aDatcountDDatid
+    Segment: 0x0
+    Address: 0x209af6c
+  - Name: aArcUtilC
+    Segment: 0x0
+    Address: 0x209af84
+  - Name: aClactC
+    Segment: 0x0
+    Address: 0x209afd8
+  - Name: a0_6
+    Segment: 0x0
+    Address: 0x209afe4
+  - Name: aTextprintC
+    Segment: 0x0
+    Address: 0x209afe8
+  - Name: aFadeC
+    Segment: 0x0
+    Address: 0x209aff4
+  - Name: aDouble3ddispC
+    Segment: 0x0
+    Address: 0x209affc
+  - Name: aBillboardC
+    Segment: 0x0
+    Address: 0x209b00c
+  - Name: aBillboardActC
+    Segment: 0x0
+    Address: 0x209b018
+  - Name: aParticleC
+    Segment: 0x0
+    Address: 0x209b028
+  - Name: aButtonManC
+    Segment: 0x0
+    Address: 0x209b034
+  - Name: a0123456789abcd
+    Segment: 0x0
+    Address: 0x209b05c
+  - Name: aSCCCCS
+    Segment: 0x0
+    Address: 0x209b080
+  - Name: aAbcdefghijklmn
+    Segment: 0x0
+    Address: 0x209b094
+  - Name: aSdkdevGamespyC
+    Segment: 0x0
+    Address: 0x209b0d8
+  - Name: aGamestatsGsNin
+    Segment: 0x0
+    Address: 0x209b0ec
+  - Name: aNwcusbap
+    Segment: 0x0
+    Address: 0x209b10c
+  - Name: aGwi6Fs0nf
+    Segment: 0x0
+    Address: 0x209b128
+  - Name: aEgerAgSM
+    Segment: 0x0
+    Address: 0x209b138
+  - Name: a952uybjnpmu903
+    Segment: 0x0
+    Address: 0x209b148
+  - Name: a38g6zxjk20gvmv
+    Segment: 0x0
+    Address: 0x209b164
+  - Name: aNdwcshap
+    Segment: 0x0
+    Address: 0x209b180
+  - Name: aNwcusbap_0
+    Segment: 0x0
+    Address: 0x209b18c
+  - Name: aNintendoDs
+    Segment: 0x0
+    Address: 0x209b198
+  - Name: aRom
+    Segment: 0x0
+    Address: 0x209b51d
+  - Name: aMDY
+    Segment: 0x0
+    Address: 0x209b8d5
+  - Name: aIMSP
+    Segment: 0x0
+    Address: 0x209b8ed
+  - Name: aABETY
+    Segment: 0x0
+    Address: 0x209b8f9
+  - Name: aSunSundayMonMo
+    Segment: 0x0
+    Address: 0x209b909
+  - Name: aJanJanuaryFebF
+    Segment: 0x0
+    Address: 0x209b961
+  - Name: aInf
+    Segment: 0x0
+    Address: 0x209baa9
+  - Name: aInf_0
+    Segment: 0x0
+    Address: 0x209bab1
+  - Name: aInf_1
+    Segment: 0x0
+    Address: 0x209bab9
+  - Name: aInf_2
+    Segment: 0x0
+    Address: 0x209babd
+  - Name: aNan
+    Segment: 0x0
+    Address: 0x209bac1
+  - Name: aNan_0
+    Segment: 0x0
+    Address: 0x209bac9
+  - Name: aNan_1
+    Segment: 0x0
+    Address: 0x209bad1
+  - Name: aNan_2
+    Segment: 0x0
+    Address: 0x209bad5
+  - Name: a54210108624275
+    Segment: 0x0
+    Address: 0x209bb25
+  - Name: a11102230246251
+    Segment: 0x0
+    Address: 0x209bb55
+  - Name: a23283064365386
+    Segment: 0x0
+    Address: 0x209bb7d
+  - Name: a152587890625
+    Segment: 0x0
+    Address: 0x209bb95
+  - Name: a390625
+    Segment: 0x0
+    Address: 0x209bba5
+  - Name: a78125
+    Segment: 0x0
+    Address: 0x209bbad
+  - Name: a15625
+    Segment: 0x0
+    Address: 0x209bbb5
+  - Name: a3125
+    Segment: 0x0
+    Address: 0x209bbbd
+  - Name: a625
+    Segment: 0x0
+    Address: 0x209bbc5
+  - Name: a125
+    Segment: 0x0
+    Address: 0x209bbc9
+  - Name: a25
+    Segment: 0x0
+    Address: 0x209bbcd
+  - Name: a5
+    Segment: 0x0
+    Address: 0x209bbd1
+  - Name: a1
+    Segment: 0x0
+    Address: 0x209bbd5
+  - Name: a2
+    Segment: 0x0
+    Address: 0x209bbd9
+  - Name: a4
+    Segment: 0x0
+    Address: 0x209bbdd
+  - Name: a8
+    Segment: 0x0
+    Address: 0x209bbe1
+  - Name: a16
+    Segment: 0x0
+    Address: 0x209bbe5
+  - Name: a17976931348623
+    Segment: 0x0
+    Address: 0x209bbf9
+  - Name: g_VBlankCallback
+    Segment: 0x0
+    Address: 0x209da58
+  - Name: g_GameProcManager
+    Segment: 0x1
+    Address: 0x2141858
+  - Name: g_DebugPrintState
+    Segment: 0x1
+    Address: 0x2141874
+  - Name: g_EnabledBGsB
+    Segment: 0x1
+    Address: 0x2141910
+  - Name: g_EnabledBGsA
+    Segment: 0x1
+    Address: 0x2141914
+  - Name: g_SystemFont
+    Segment: 0x1
+    Address: 0x2141920
+  - Name: g_FadeMgr
+    Segment: 0x1
+    Address: 0x2141944
+  - Name: g_GfxVRAMLCDCBanks
+    Segment: 0x1
+    Address: 0x214c08c
+  - Name: g_GfxVRAMBGBanksB
+    Segment: 0x1
+    Address: 0x214c09e
+  - Name: g_ExcUndefAbortCallback
+    Segment: 0x1
+    Address: 0x214c4d8
+  - Name: g_ExceptionHandler
+    Segment: 0x1
+    Address: 0x2fffd9c
+  - Name: LCDIO_A.WINOUT
+    Segment: 0x1
+    Address: 0x400004a
+  - Name: TM0CNT_L
+    Segment: 0x1
+    Address: 0x4000100
+  - Name: IE
+    Segment: 0x1
+    Address: 0x4000210
+  - Name: POWCNT1
+    Segment: 0x1
+    Address: 0x4000304
+  - Name: DISPCNT_B
+    Segment: 0x1
+    Address: 0x4001000
+  - Name: LCDIO_B
+    Segment: 0x1
+    Address: 0x4001008
+  - Name: MASTER_BRIGHT_B
+    Segment: 0x1
+    Address: 0x400106c
+  - Name: STD_PALETTE_BG_B
+    Segment: 0x1
+    Address: 0x5000400
+  - Name: GetUserMemRegionDefaultStart
+    Segment: 0x0
+    Address: 0x207B375
+  - Name: main
+    Segment: 0x0
+    Address: 0x02005125
+  - Name: GFLAppInit
+    Segment: 0x0
+    Address: 0x020054B9
+  - Name: os_MemRegionStarts
+    Segment: 0x0
+    Address: 0x2fffda0
+  - Name: os_MemRegionEnds
+    Segment: 0x0
+    Address: 0x2fffdc4
