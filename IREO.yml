@@ -444,10 +444,10 @@ Symbols:
     Address: 0x203aae5
   - Name: GFL_ProcInitSubsystem
     Segment: 0x0
-    Address: 0x203ab11
+    Address: 0x203aaed
   - Name: GFL_ProcReleaseSubsystem
     Segment: 0x0
-    Address: 0x203ab21
+    Address: 0x203ab11
   - Name: j_GFL_HeapFree_29
     Segment: 0x0
     Address: 0x203c449
@@ -655,12 +655,18 @@ Symbols:
   - Name: sndLockChannel
     Segment: 0x0
     Address: 0x206bb1d
+  - Name: sndReleaseChannel
+    Segment: 0x0
+    Address: 0x206bb49
   - Name: sndPlaySamples
     Segment: 0x0
     Address: 0x206bb59
   - Name: sndStopChannel
     Segment: 0x0
     Address: 0x206bc1d
+  - Name: sndSync
+    Segment: 0x0
+    Address: 0x206b931
   - Name: nullsub_158
     Segment: 0x0
     Address: 0x206eca5
@@ -699,7 +705,7 @@ Symbols:
     Address: 0x2070ead
   - Name: romfs_fopen
     Segment: 0x0
-    Address: 0x2070eb5
+    Address: 0x2070ea1
   - Name: sys_get_overlay_size
     Segment: 0x0
     Address: 0x2070f05
@@ -865,6 +871,9 @@ Symbols:
   - Name: memset
     Segment: 0x0
     Address: 0x20839d0
+  - Name: memcmp
+    Segment: 0x0
+    Address: 0x2083a10
   - Name: nullsub_164
     Segment: 0x0
     Address: 0x2083a4c
@@ -925,6 +934,9 @@ Symbols:
   - Name: nullsub_170
     Segment: 0x0
     Address: 0x2089360
+  - Name: __aeabi_ldivmod
+    Segment: 0x0
+    Address: 0x208d414
   - Name: __aeabi_uldivmod
     Segment: 0x0
     Address: 0x208d5c4
@@ -934,10 +946,19 @@ Symbols:
   - Name: __aeabi_lmul
     Segment: 0x0
     Address: 0x208d60c
+  - Name: __aeabi_llsl
+    Segment: 0x0
+    Address: 0x208d62c
   - Name: __aeabi_idiv
     Segment: 0x0
     Address: 0x208d65c
+  - Name: __aeabi_idivmod
+    Segment: 0x0
+    Address: 0x208d65c
   - Name: __aeabi_uidiv
+    Segment: 0x0
+    Address: 0x208d868
+  - Name: __aeabi_uidivmod
     Segment: 0x0
     Address: 0x208d868
   - Name: nullsub_117
@@ -2707,30 +2728,315 @@ Symbols:
   - Name: g_ExceptionHandler
     Segment: 0x1
     Address: 0x2fffd9c
-  - Name: LCDIO_A.WINOUT
-    Segment: 0x1
-    Address: 0x400004a
+  - Name: DISPCNT_A
+    Segment: 0x15
+    Address: 0x4000000
+  - Name: DISPSTAT
+    Segment: 0x15
+    Address: 0x4000004
+  - Name: VCOUNT
+    Segment: 0x15
+    Address: 0x4000006
+  - Name: LCDIO_A
+    Segment: 0x15
+    Address: 0x4000008
+  - Name: DISP3DCNT
+    Segment: 0x15
+    Address: 0x4000060
+  - Name: DISPCAPCNT
+    Segment: 0x15
+    Address: 0x4000064
+  - Name: MASTER_BRIGHT_A
+    Segment: 0x15
+    Address: 0x400006c
+  - Name: DMA_CHANNELS
+    Segment: 0x15
+    Address: 0x40000b0
+  - Name: DMAFILL
+    Segment: 0x15
+    Address: 0x40000e0
   - Name: TM0CNT_L
-    Segment: 0x1
+    Segment: 0x15
     Address: 0x4000100
+  - Name: TM0CNT_H
+    Segment: 0x15
+    Address: 0x4000102
+  - Name: KEYINPUT
+    Segment: 0x15
+    Address: 0x4000130
+  - Name: IPCSYNC
+    Segment: 0x15
+    Address: 0x4000180
+  - Name: IPCFIFOCNT
+    Segment: 0x15
+    Address: 0x4000184
+  - Name: IPCFIFOSEND
+    Segment: 0x15
+    Address: 0x4000188
+  - Name: AUXSPICNT
+    Segment: 0x15
+    Address: 0x40001a1
+  - Name: ROMCTRL
+    Segment: 0x15
+    Address: 0x40001a4
+  - Name: GAMECARD_8BYTE_OUT
+    Segment: 0x15
+    Address: 0x40001a8
+  - Name: EXMEMCNT
+    Segment: 0x15
+    Address: 0x4000204
+  - Name: IME
+    Segment: 0x15
+    Address: 0x4000208
   - Name: IE
-    Segment: 0x1
+    Segment: 0x15
     Address: 0x4000210
+  - Name: IF
+    Segment: 0x15
+    Address: 0x4000214
+  - Name: VRAMCNT_A
+    Segment: 0x15
+    Address: 0x4000240
+  - Name: VRAMCNT_B
+    Segment: 0x15
+    Address: 0x4000241
+  - Name: VRAMCNT_C
+    Segment: 0x15
+    Address: 0x4000242
+  - Name: VRAMCNT_D
+    Segment: 0x15
+    Address: 0x4000243
+  - Name: VRAMCNT_E
+    Segment: 0x15
+    Address: 0x4000244
+  - Name: VRAMCNT_F
+    Segment: 0x15
+    Address: 0x4000245
+  - Name: VRAMCNT_G
+    Segment: 0x15
+    Address: 0x4000246
+  - Name: WRAMCNT
+    Segment: 0x15
+    Address: 0x4000247
+  - Name: VRAMCNT_H
+    Segment: 0x15
+    Address: 0x4000248
+  - Name: VRAMCNT_I
+    Segment: 0x15
+    Address: 0x4000249
+  - Name: DIVCNT
+    Segment: 0x15
+    Address: 0x4000280
+  - Name: DIV_NUMER
+    Segment: 0x15
+    Address: 0x4000290
+  - Name: DIV_DENOM
+    Segment: 0x15
+    Address: 0x4000298
+  - Name: DIV_RESULT
+    Segment: 0x15
+    Address: 0x40002a0
+  - Name: DIVREM_RESULT
+    Segment: 0x15
+    Address: 0x40002a8
+  - Name: SQRTCNT
+    Segment: 0x15
+    Address: 0x40002b0
+  - Name: SQRT_RESULT
+    Segment: 0x15
+    Address: 0x40002b4
+  - Name: SQRT_PARAM
+    Segment: 0x15
+    Address: 0x40002b8
   - Name: POWCNT1
-    Segment: 0x1
+    Segment: 0x15
     Address: 0x4000304
+  - Name: RDLINES_COUNT
+    Segment: 0x15
+    Address: 0x4000320
+  - Name: EDGE_COLOR
+    Segment: 0x15
+    Address: 0x4000330
+  - Name: ALPHA_TEST_REF
+    Segment: 0x15
+    Address: 0x4000340
+  - Name: CLEAR_COLOR
+    Segment: 0x15
+    Address: 0x4000350
+  - Name: CLEAR_DEPTH
+    Segment: 0x15
+    Address: 0x4000354
+  - Name: CLRIMAGE_OFFSET
+    Segment: 0x15
+    Address: 0x4000356
+  - Name: FOG_COLOR
+    Segment: 0x15
+    Address: 0x4000358
+  - Name: FOG_OFFSET
+    Segment: 0x15
+    Address: 0x400035c
+  - Name: FOG_TABLE
+    Segment: 0x15
+    Address: 0x4000360
+  - Name: TOON_TABLE
+    Segment: 0x15
+    Address: 0x4000380
+  - Name: GXFIFO
+    Segment: 0x15
+    Address: 0x4000400
+  - Name: MTX_MODE
+    Segment: 0x15
+    Address: 0x4000440
+  - Name: MTX_PUSH
+    Segment: 0x15
+    Address: 0x4000444
+  - Name: MTX_POP
+    Segment: 0x15
+    Address: 0x4000448
+  - Name: MTX_STORE
+    Segment: 0x15
+    Address: 0x400044c
+  - Name: MTX_RESTORE
+    Segment: 0x15
+    Address: 0x4000450
+  - Name: MTX_IDENTITY
+    Segment: 0x15
+    Address: 0x4000454
+  - Name: MTX_LOAD_4X4
+    Segment: 0x15
+    Address: 0x4000458
+  - Name: MTX_LOAD_4X3
+    Segment: 0x15
+    Address: 0x400045c
+  - Name: MTX_MULT_4X4
+    Segment: 0x15
+    Address: 0x4000460
+  - Name: MTX_MULT_4X3
+    Segment: 0x15
+    Address: 0x4000464
+  - Name: MTX_MULT_3x3
+    Segment: 0x15
+    Address: 0x4000468
+  - Name: MTX_SCALE
+    Segment: 0x15
+    Address: 0x400046c
+  - Name: MTX_TRANS
+    Segment: 0x15
+    Address: 0x4000470
+  - Name: COLOR
+    Segment: 0x15
+    Address: 0x4000480
+  - Name: NORMAL
+    Segment: 0x15
+    Address: 0x4000484
+  - Name: TEXCOORD
+    Segment: 0x15
+    Address: 0x4000488
+  - Name: VTX_16
+    Segment: 0x15
+    Address: 0x400048c
+  - Name: VTX_10
+    Segment: 0x15
+    Address: 0x4000490
+  - Name: VTX_XY
+    Segment: 0x15
+    Address: 0x4000494
+  - Name: VTX_XZ
+    Segment: 0x15
+    Address: 0x4000498
+  - Name: VTX_YZ
+    Segment: 0x15
+    Address: 0x400049c
+  - Name: VTX_DIFF
+    Segment: 0x15
+    Address: 0x40004a0
+  - Name: POLYGON_ATTR
+    Segment: 0x15
+    Address: 0x40004a4
+  - Name: TEXIMAGE_PARAM
+    Segment: 0x15
+    Address: 0x40004a8
+  - Name: PALETTE_BASE
+    Segment: 0x15
+    Address: 0x40004ac
+  - Name: DIF_AMB
+    Segment: 0x15
+    Address: 0x40004c0
+  - Name: SPE_EMI
+    Segment: 0x15
+    Address: 0x40004c4
+  - Name: LIGHT_VECTOR
+    Segment: 0x15
+    Address: 0x40004c8
+  - Name: LIGHT_COLOR
+    Segment: 0x15
+    Address: 0x40004cc
+  - Name: SHININESS
+    Segment: 0x15
+    Address: 0x40004d0
+  - Name: BEGIN_VTXS
+    Segment: 0x15
+    Address: 0x4000500
+  - Name: END_VTXS
+    Segment: 0x15
+    Address: 0x4000504
+  - Name: SWAP_BUFFERS
+    Segment: 0x15
+    Address: 0x4000540
+  - Name: VIEWPORT
+    Segment: 0x15
+    Address: 0x4000580
+  - Name: BOX_TEST
+    Segment: 0x15
+    Address: 0x40005c0
+  - Name: POS_TEST
+    Segment: 0x15
+    Address: 0x40005c4
+  - Name: VEC_TEST
+    Segment: 0x15
+    Address: 0x40005c8
+  - Name: GXSTAT
+    Segment: 0x15
+    Address: 0x4000600
+  - Name: POLY_RAM_COUNT
+    Segment: 0x15
+    Address: 0x4000604
+  - Name: DISP_1DOT_DEPTH
+    Segment: 0x15
+    Address: 0x4000610
+  - Name: POS_RESULT
+    Segment: 0x15
+    Address: 0x4000620
+  - Name: VEC_RESULT
+    Segment: 0x15
+    Address: 0x4000630
+  - Name: CLIPMTX_RESULT
+    Segment: 0x15
+    Address: 0x4000640
+  - Name: VECMTX_RESULT
+    Segment: 0x15
+    Address: 0x4000680
   - Name: DISPCNT_B
-    Segment: 0x1
+    Segment: 0x15
     Address: 0x4001000
   - Name: LCDIO_B
-    Segment: 0x1
+    Segment: 0x15
     Address: 0x4001008
   - Name: MASTER_BRIGHT_B
-    Segment: 0x1
+    Segment: 0x15
     Address: 0x400106c
+  - Name: STD_PALETTE_BG_A
+    Segment: 0x16
+    Address: 0x5000000
+  - Name: STD_PALETTE_OBJ_A
+    Segment: 0x16
+    Address: 0x5000200
   - Name: STD_PALETTE_BG_B
-    Segment: 0x1
+    Segment: 0x16
     Address: 0x5000400
+  - Name: STD_PALETTE_OBJ_B
+    Segment: 0x16
+    Address: 0x5000600
   - Name: GetUserMemRegionDefaultStart
     Segment: 0x0
     Address: 0x207B375
